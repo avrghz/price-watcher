@@ -6,3 +6,6 @@ Format: `- <model code> | <label>`. Use the exact code (e.g. RT90X8, not RT90X8Y
 - F4WX859Y | LG washer
 - RT90X8 | LG dryer (white)
 - F4WX859Y.RT90X8 | LG washer + dryer bundle
+- WGH24407NL | Bosch washer
+- WQJ23200NL | Bosch dryer
+- WQN246D0NL | Bosch dryer
