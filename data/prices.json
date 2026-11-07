@@ -284,5 +284,27 @@
   "source": "",
   "url": "https://www.wehkamp.nl/zoeken/?term=RT90X8",
   "note": "No match"
+ },
+ {
+  "date": "2026-11-07",
+  "sku": "RT90X8",
+  "shop": "LG official store",
+  "total_delivered": 799,
+  "stock": "Available",
+  "status": "ok",
+  "source": "fetched",
+  "url": "https://www.lg.com/nl/wasmachines-en-drogers/drogers/rt90x8/",
+  "note": "Free delivery. Bundle with F4WX859Y: €1,399 (F4WX859Y.RT90X8)"
+ },
+ {
+  "date": "2026-11-07",
+  "sku": "F4WX859Y",
+  "shop": "LG official store",
+  "total_delivered": null,
+  "stock": "",
+  "status": "not found",
+  "source": "",
+  "url": "https://www.lg.com/nl/wasmachines-en-drogers/wasmachines/f4wx859y-rt90x8/",
+  "note": "Only sold as bundle: + RT90X8 €1,399, or + RT90X8 + stacking kit DK2W €1,399 (was €1,499)"
  }
 ]

@@ -205,9 +205,9 @@
   ],
   "added": "2026-11-07",
   "found_via": "seed",
-  "last_ok": null,
+  "last_ok": "2026-11-07",
   "fail_streak": 0,
-  "needs_browser": false,
+  "needs_browser": true,
   "status": "active"
  },
  {
