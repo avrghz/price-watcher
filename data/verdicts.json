@@ -9,7 +9,9 @@
   "cheapest_total": 629,
   "history_days": 0,
   "alert": false,
-  "reason": "No price history yet. Black Friday prices run until 30 Nov, so waiting until 27 Nov costs nothing."
+  "reason": "No price history yet. Black Friday prices run until 30 Nov, so waiting until 27 Nov costs nothing.",
+  "target_price": null,
+  "target_basis": "Not enough history yet (1 day)"
  },
  {
   "date": "2026-11-07",
@@ -21,6 +23,8 @@
   "cheapest_total": 799,
   "history_days": 0,
   "alert": false,
-  "reason": "No price history yet. Black Friday prices run until 30 Nov, so waiting until 27 Nov costs nothing."
+  "reason": "No price history yet. Black Friday prices run until 30 Nov, so waiting until 27 Nov costs nothing.",
+  "target_price": null,
+  "target_basis": "Not enough history yet (1 day)"
  }
 ]

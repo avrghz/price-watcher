@@ -29,6 +29,14 @@ Use the history you were given + Tweakers history.
 - No history but a sales event within 21 days → NEUTRAL, reason says promo end date / that waiting costs nothing.
 - `alert: true` only when verdict is BUY and the previous verdict was not BUY.
 
+## Target price (what to wait for)
+Pool = shop-confirmed daily lows from your history + Tweakers history (last 365 days).
+- `target_price` = the **20th percentile** of the pool, rounded down to €5 — a price that has realistically been reached, not a one-off glitch.
+- Ignore any low that lasted 1 day only and is >15% below the next-lowest (likely a pricing error).
+- `target_basis`: one line, e.g. "20th pct of 92 days (Tweakers + own log); all-time low €579 on 2025-11-28".
+- Fewer than 14 data points → `target_price: null`, basis "Not enough history yet (N days)".
+- If today's cheapest ≤ `target_price` → verdict BUY regardless of other rules.
+
 ## Return exactly this JSON (nothing else)
 ```json
 {
@@ -39,7 +47,8 @@ Use the history you were given + Tweakers history.
   ],
   "verdict": {"date": "YYYY-MM-DD", "sku": "RT90X8", "product": "LG RT90X8 dryer (white)",
      "verdict": "NEUTRAL", "confidence": "low", "cheapest_shop": "MediaMarkt", "cheapest_total": 799,
-     "history_days": 1, "alert": false, "reason": "One sentence."},
+     "history_days": 1, "target_price": null, "target_basis": "Not enough history yet (1 day)",
+     "alert": false, "reason": "One sentence."},
   "shop_urls": {"mediamarkt.nl": "https://…"},
   "source_results": {"coolblue.nl": {"ok": false, "needs_browser": true}},
   "new_sources": [{"shop": "Witgoedhandel X", "domain": "x.nl", "type": "shop", "categories": ["dryer"], "found_via": "tweakers"}]
