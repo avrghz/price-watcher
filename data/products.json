@@ -1,0 +1,4 @@
+[
+ {"sku": "F4WX859Y", "name": "LG F4WX859Y washer", "ean": "8806096118900", "status": "active", "added": "2026-11-07"},
+ {"sku": "RT90X8", "name": "LG RT90X8 dryer (white)", "status": "active", "added": "2026-11-07", "excluded_variants": ["RT90X8YB", "RT90X8C"]}
+]

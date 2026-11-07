@@ -1,0 +1,26 @@
+[
+ {
+  "date": "2026-11-07",
+  "sku": "F4WX859Y",
+  "product": "LG F4WX859Y washer",
+  "verdict": "NEUTRAL",
+  "confidence": "low",
+  "cheapest_shop": "Bemmel & Kroon",
+  "cheapest_total": 629,
+  "history_days": 0,
+  "alert": false,
+  "reason": "No price history yet. Black Friday prices run until 30 Nov, so waiting until 27 Nov costs nothing."
+ },
+ {
+  "date": "2026-11-07",
+  "sku": "RT90X8",
+  "product": "LG RT90X8 dryer",
+  "verdict": "NEUTRAL",
+  "confidence": "low",
+  "cheapest_shop": "MediaMarkt",
+  "cheapest_total": 799,
+  "history_days": 0,
+  "alert": false,
+  "reason": "No price history yet. Black Friday prices run until 30 Nov, so waiting until 27 Nov costs nothing."
+ }
+]

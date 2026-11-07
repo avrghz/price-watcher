@@ -1,0 +1,245 @@
+<meta name="dash-one-writer">
+<style>
+.pw { display: grid; gap: var(--cds-gap-lg); font-family: var(--font-anthropic-sans); }
+.pw h1 { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); margin: 0; text-wrap: balance; }
+.pw-lede { margin: var(--cds-gap-xs) 0 0; color: var(--color-fg-muted); max-width: 65ch; }
+.pw-grid { display: grid; gap: var(--cds-gap-md); grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr)); }
+.pw-card { background: var(--color-panel); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); padding: var(--cds-pad-lg); display: grid; gap: var(--cds-gap-sm); min-width: 0; }
+.pw-card h2 { margin: 0; font-size: var(--cds-font-size-heading); font-weight: var(--cds-font-weight-medium); }
+.pw-note { margin: 0; color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
+.pw-row { display: flex; align-items: baseline; gap: var(--cds-gap-sm); flex-wrap: wrap; }
+.pw-big { font-family: var(--font-anthropic-serif); font-weight: 400; font-size: var(--cds-font-size-title); font-variant-numeric: tabular-nums; }
+.pw-pill { display: inline-block; padding: 2px var(--cds-pad-sm); border-radius: 999px; font-size: var(--cds-font-size-caption); font-weight: var(--cds-font-weight-medium); letter-spacing: .04em; border: 1px solid currentColor; }
+.pw-pill.buy { color: var(--color-ok); }
+.pw-pill.wait { color: var(--color-warn); }
+.pw-pill.neutral { color: var(--color-fg-muted); }
+.pw-alert { color: var(--color-ok); font-weight: var(--cds-font-weight-medium); }
+.pw-chart { position: relative; min-height: 240px; }
+.pw-tip { position: absolute; pointer-events: none; background: var(--cds-surface-popover); border: 1px solid var(--cds-border); border-radius: var(--cds-radius); box-shadow: var(--cds-shadow-popover); padding: var(--cds-pad-xs) var(--cds-pad-sm); font-size: var(--cds-font-size-caption); white-space: nowrap; }
+.pw-tip .d { color: var(--cds-text-secondary); }
+.pw-legend { display: flex; gap: var(--cds-gap-md); flex-wrap: wrap; font-size: var(--cds-font-size-caption); color: var(--color-fg-muted); }
+.pw-sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+.pw-tablebox { overflow: auto; max-height: 32rem; }
+.pw table { border-collapse: collapse; width: 100%; font-size: var(--cds-font-size-body); font-variant-numeric: tabular-nums; }
+.pw th { position: sticky; top: 0; background: var(--color-panel); text-align: left; font-weight: var(--cds-font-weight-medium); color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); padding: var(--cds-pad-xs) var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); }
+.pw td { padding: var(--cds-pad-xs) var(--cds-pad-sm); border-bottom: 1px solid var(--color-border-line); }
+.pw td.num, .pw th.num { text-align: right; }
+.pw tr.off td { color: var(--color-fg-muted); }
+.pw tr.best td:first-child + td { font-weight: var(--cds-font-weight-medium); }
+.pw a { color: inherit; }
+[data-dash-source-state=empty] { color: transparent; }
+[data-dash-source-state=refreshing] { opacity: .5; transition: opacity var(--cds-dur-slow); }
+@media (max-width: 560px) { .pw .hide-narrow { display: none; } }
+</style>
+
+<div class="pw">
+  <header id="top">
+    <h1>Witgoed Price Watch</h1>
+    <p class="pw-lede">LG washer and dryer, checked every morning at 08:00 across Dutch shops. Prices are delivered totals including BTW, new only. Last check: <b data-draw="last" data-source="verdicts_latest" data-field="date">—</b>.</p>
+  </header>
+
+  <section class="pw-grid" id="signals">
+    <article class="pw-card" id="washer">
+      <h2>LG F4WX859Y washer</h2>
+      <div class="pw-row">
+        <span data-draw="pill" data-sku="F4WX859Y" data-source="verdicts_latest" data-field="verdict" data-where="sku=F4WX859Y">—</span>
+        <span class="pw-note">confidence <span data-draw="conf" data-sku="F4WX859Y" data-source="verdicts_latest" data-field="confidence" data-where="sku=F4WX859Y">—</span></span>
+      </div>
+      <div class="pw-row">
+        <span class="pw-big" data-draw="total" data-sku="F4WX859Y" data-source="verdicts_latest" data-field="cheapest_total" data-where="sku=F4WX859Y">—</span>
+        <span>at <span data-draw="shop" data-sku="F4WX859Y" data-source="verdicts_latest" data-field="cheapest_shop" data-where="sku=F4WX859Y">—</span></span>
+      </div>
+      <p class="pw-note">Lowest seen: <span data-draw="low" data-sku="F4WX859Y" data-source="lows" data-field="low" data-where="sku=F4WX859Y">—</span> · days of history: <span data-draw="days" data-sku="F4WX859Y" data-source="verdicts_latest" data-field="history_days" data-where="sku=F4WX859Y">—</span></p>
+      <p class="pw-note" data-draw="reason" data-sku="F4WX859Y" data-source="verdicts_latest" data-field="reason" data-where="sku=F4WX859Y">—</p>
+    </article>
+    <article class="pw-card" id="dryer">
+      <h2>LG RT90X8 dryer (white)</h2>
+      <div class="pw-row">
+        <span data-draw="pill" data-sku="RT90X8" data-source="verdicts_latest" data-field="verdict" data-where="sku=RT90X8">—</span>
+        <span class="pw-note">confidence <span data-draw="conf" data-sku="RT90X8" data-source="verdicts_latest" data-field="confidence" data-where="sku=RT90X8">—</span></span>
+      </div>
+      <div class="pw-row">
+        <span class="pw-big" data-draw="total" data-sku="RT90X8" data-source="verdicts_latest" data-field="cheapest_total" data-where="sku=RT90X8">—</span>
+        <span>at <span data-draw="shop" data-sku="RT90X8" data-source="verdicts_latest" data-field="cheapest_shop" data-where="sku=RT90X8">—</span></span>
+      </div>
+      <p class="pw-note">Lowest seen: <span data-draw="low" data-sku="RT90X8" data-source="lows" data-field="low" data-where="sku=RT90X8">—</span> · days of history: <span data-draw="days" data-sku="RT90X8" data-source="verdicts_latest" data-field="history_days" data-where="sku=RT90X8">—</span></p>
+      <p class="pw-note" data-draw="reason" data-sku="RT90X8" data-source="verdicts_latest" data-field="reason" data-where="sku=RT90X8">—</p>
+    </article>
+  </section>
+
+  <section class="pw-card" id="trend">
+    <h2>Cheapest delivered price per day</h2>
+    <p class="pw-note">Lowest shop-confirmed price across all shops checked that day.</p>
+    <div class="pw-legend" data-source="daily_low">
+      <span><i class="pw-sw" data-draw="sw0"></i>F4WX859Y washer</span>
+      <span><i class="pw-sw" data-draw="sw1"></i>RT90X8 dryer</span>
+    </div>
+    <div class="pw-chart" data-draw="chart" data-source="daily_low"></div>
+  </section>
+
+  <section class="pw-card" id="shops">
+    <h2>Today's prices by shop</h2>
+    <p class="pw-note">Every source in the check. Grey rows were blocked, not listed, or only seen on a comparison site.</p>
+    <div class="pw-tablebox">
+      <table data-source="today" data-row-key="sku,shop">
+        <thead><tr>
+          <th data-field="sku">Product</th>
+          <th data-field="shop">Shop</th>
+          <th class="num" data-field="total_delivered">Delivered</th>
+          <th data-field="stock">Stock</th>
+          <th data-field="status">Status</th>
+          <th class="hide-narrow" data-field="note">Note</th>
+        </tr></thead>
+        <tbody data-draw="rows"></tbody>
+      </table>
+    </div>
+  </section>
+</div>
+
+<script>
+const eur = (n) => n == null || n === '' ? '' : '€' + d3.format(',')(Number(n));
+const SKUS = ['F4WX859Y', 'RT90X8'];
+
+dash.calc('verdicts_latest', {
+  title: 'Latest signal per product',
+  description: 'The most recent verdict row for each product.',
+  inputs: ['verdicts'],
+  fn: (verdicts) => {
+    const by = new Map();
+    for (const v of verdicts) { const p = by.get(v.sku); if (!p || v.date > p.date) by.set(v.sku, v); }
+    return [...by.values()];
+  },
+});
+
+dash.calc('daily_low', {
+  title: 'Cheapest per day',
+  description: 'Lowest shop-confirmed delivered price per product per day.',
+  inputs: ['prices'],
+  fn: (prices) => {
+    const m = new Map();
+    for (const p of prices) {
+      if (p.source !== 'fetched' || p.total_delivered == null) continue;
+      const k = p.sku + '|' + p.date, t = Number(p.total_delivered);
+      if (!m.has(k) || t < m.get(k).low) m.set(k, {sku: p.sku, date: p.date, low: t});
+    }
+    return [...m.values()].sort((a, b) => a.date < b.date ? -1 : 1);
+  },
+});
+
+dash.calc('lows', {
+  title: 'Lowest seen',
+  description: 'Lowest shop-confirmed delivered price ever logged per product.',
+  inputs: ['daily_low'],
+  fn: (daily_low) => {
+    const m = new Map();
+    for (const r of daily_low) if (!m.has(r.sku) || r.low < m.get(r.sku).low) m.set(r.sku, {sku: r.sku, low: r.low});
+    return [...m.values()];
+  },
+});
+
+dash.calc('today', {
+  title: "Today's shop prices",
+  description: 'All rows from the most recent check date.',
+  inputs: ['prices'],
+  fn: (prices) => {
+    const last = prices.reduce((a, p) => p.date > a ? p.date : a, '');
+    return prices.filter((p) => p.date === last);
+  },
+});
+
+const pick = (id, sku) => {
+  const d = dash.data(id);
+  return d.status === 'ok' ? d.data.find((r) => r.sku === sku) : null;
+};
+const fill = (name, id, f) => dash.draw(name, (el) => {
+  const r = pick(id, el.dataset.sku);
+  el.textContent = r ? f(r) : '—';
+});
+
+dash.draw('pill', (el) => {
+  const r = pick('verdicts_latest', el.dataset.sku);
+  el.replaceChildren();
+  if (!r) { el.textContent = '—'; return; }
+  const s = document.createElement('span');
+  s.className = 'pw-pill ' + String(r.verdict).toLowerCase();
+  s.textContent = r.verdict;
+  el.append(s);
+  if (r.alert) { const a = document.createElement('span'); a.className = 'pw-alert'; a.textContent = ' Good time to buy'; el.append(a); }
+});
+fill('conf', 'verdicts_latest', (r) => r.confidence);
+fill('total', 'verdicts_latest', (r) => eur(r.cheapest_total));
+fill('shop', 'verdicts_latest', (r) => r.cheapest_shop);
+fill('days', 'verdicts_latest', (r) => String(r.history_days));
+fill('reason', 'verdicts_latest', (r) => r.reason);
+fill('low', 'lows', (r) => eur(r.low));
+dash.draw('last', (el) => {
+  const d = dash.data('verdicts_latest');
+  const last = d.status === 'ok' ? d.data.reduce((a, r) => r.date > a ? r.date : a, '') : '';
+  el.textContent = last ? d3.utcFormat('%-d %b %Y')(new Date(last)) : '—';
+});
+dash.draw('sw0', (el) => { el.style.background = dash.colors[0]; });
+dash.draw('sw1', (el) => { el.style.background = dash.colors[1]; });
+
+dash.draw('chart', (el) => {
+  el.replaceChildren();
+  const d = dash.data('daily_low');
+  if (d.status !== 'ok' || !d.data.length) return;
+  const rows = d.data.map((r) => ({...r, t: new Date(r.date)}));
+  const W = Math.max(280, el.clientWidth), H = 240, m = {t: 12, r: 64, b: 28, l: 52};
+  const ext = d3.extent(rows, (r) => r.t);
+  if (+ext[0] === +ext[1]) { ext[0] = d3.utcDay.offset(ext[0], -3); ext[1] = d3.utcDay.offset(ext[1], 3); }
+  const x = d3.scaleUtc(ext, [m.l, W - m.r]);
+  const lo = d3.min(rows, (r) => r.low), hi = d3.max(rows, (r) => r.low);
+  const y = d3.scaleLinear([Math.floor(lo * 0.9 / 50) * 50, Math.ceil(hi * 1.05 / 50) * 50], [H - m.b, m.t]).nice();
+  const svg = d3.select(el).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`);
+  svg.append('g').attr('transform', `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(5).tickSize(-(W - m.l - m.r)).tickFormat((v) => '€' + d3.format(',')(v)))
+    .attr('font-size', null).attr('font-family', null)
+    .call((g) => { g.select('.domain').remove(); g.selectAll('line').attr('stroke', 'var(--cds-chart-grid)'); g.selectAll('text').attr('fill', 'var(--color-fg-muted)').style('font-size', 'var(--cds-font-size-caption)'); });
+  svg.append('g').attr('transform', `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(Math.min(6, Math.max(2, Math.floor(W / 110)))).tickFormat(d3.utcFormat('%-d %b')))
+    .attr('font-size', null).attr('font-family', null)
+    .call((g) => { g.select('.domain').attr('stroke', 'var(--cds-chart-axis)'); g.selectAll('line').remove(); g.selectAll('text').attr('fill', 'var(--color-fg-muted)').style('font-size', 'var(--cds-font-size-caption)'); });
+  const tip = d3.select(el).append('div').attr('class', 'pw-tip').style('opacity', 0);
+  SKUS.forEach((sku, i) => {
+    const s = rows.filter((r) => r.sku === sku);
+    if (!s.length) return;
+    const c = dash.colors[i];
+    svg.append('path').datum(s).attr('fill', 'none').attr('stroke', c).attr('stroke-width', 2).attr('stroke-linecap', 'round').attr('stroke-linejoin', 'round')
+      .attr('d', d3.line((r) => x(r.t), (r) => y(r.low)));
+    svg.append('g').selectAll('circle').data(s).join('circle').attr('cx', (r) => x(r.t)).attr('cy', (r) => y(r.low)).attr('r', 4).attr('fill', c)
+      .on('pointerenter', (e, r) => {
+        tip.replaceChildren();
+        tip.append('div').attr('class', 'd').text(d3.utcFormat('%-d %b %Y')(r.t));
+        tip.append('div').text(sku + '  ' + eur(r.low));
+        const px = Math.min(x(r.t) / W * el.clientWidth, el.clientWidth - 140);
+        tip.style('left', Math.max(0, px) + 'px').style('top', (y(r.low) / H * el.clientHeight - 48) + 'px').style('opacity', 1);
+      })
+      .on('pointerleave', () => tip.style('opacity', 0));
+    const e = s[s.length - 1];
+    svg.append('text').attr('x', x(e.t) + 8).attr('y', y(e.low) + 4).attr('fill', 'var(--color-fg)').style('font-size', 'var(--cds-font-size-caption)').text(eur(e.low));
+  });
+});
+
+dash.draw('rows', (tb) => {
+  tb.replaceChildren();
+  const d = dash.data('today');
+  if (d.status !== 'ok') return;
+  const sorted = [...d.data].sort((a, b) => a.sku.localeCompare(b.sku) || ((a.total_delivered ?? 1e9) - (b.total_delivered ?? 1e9)) || a.shop.localeCompare(b.shop));
+  const best = new Map();
+  for (const r of sorted) if (r.source === 'fetched' && r.total_delivered != null && !best.has(r.sku)) best.set(r.sku, r.shop);
+  for (const r of sorted) {
+    const tr = document.createElement('tr');
+    tr.dataset.key = encodeURIComponent(r.sku) + ',' + encodeURIComponent(r.shop);
+    if (r.source !== 'fetched') tr.className = 'off';
+    if (best.get(r.sku) === r.shop) tr.classList.add('best');
+    const cell = (txt, cls) => { const td = document.createElement('td'); if (cls) td.className = cls; td.textContent = txt ?? ''; tr.append(td); return td; };
+    cell(r.sku);
+    const shop = cell('');
+    if (r.url) { const a = document.createElement('a'); a.href = r.url; a.target = '_blank'; a.rel = 'noopener'; a.textContent = r.shop; shop.append(a); } else shop.textContent = r.shop;
+    cell(eur(r.total_delivered), 'num');
+    cell(r.stock);
+    cell(r.status);
+    cell(r.note, 'hide-narrow');
+    tb.append(tr);
+  }
+});
+</script>
