@@ -11,20 +11,20 @@
   "alert": false,
   "reason": "No price history yet. Black Friday prices run until 30 Nov, so waiting until 27 Nov costs nothing.",
   "target_price": null,
-  "target_basis": "Not enough history yet (1 day)"
+  "target_basis": "Not on Tweakers; own history only (1 day)"
  },
  {
   "date": "2026-11-07",
   "sku": "RT90X8",
   "product": "LG RT90X8 dryer",
-  "verdict": "NEUTRAL",
-  "confidence": "low",
+  "verdict": "WAIT",
+  "confidence": "medium",
   "cheapest_shop": "MediaMarkt",
   "cheapest_total": 799,
-  "history_days": 1,
+  "history_days": 231,
   "alert": false,
-  "reason": "€799 at 4 shops, below bol's 90-day most-shown €839. Too little history for BUY; Black Friday prices run until 30 Nov.",
-  "target_price": null,
-  "target_basis": "Not enough history yet (1 day)"
+  "reason": "€799 is above the 90-day median (€795) and it dropped to €639–€698 in Oct; Black Friday is 27 Nov. Wait for ≤ €795, ideally under €700.",
+  "target_price": 795,
+  "target_basis": "20th pct of 231 days Tweakers lows (Mar–Nov 2026); low €639 on 3–5 Oct; €698 late Oct. Some Tweakers lows may be the RT90X8C variant."
  }
 ]
