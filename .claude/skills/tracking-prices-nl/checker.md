@@ -12,7 +12,8 @@ You check **one product** across Dutch shops today and return JSON. You write no
 - **Exact SKU only.** A page for a different variant (other suffix, colour, capacity) is `not found`, not a price.
 - New only; skip refurbished / B-keuze / outlet / marketplace "used".
 - `total_delivered` = price incl. BTW + delivery cost. Pickup discounts, cashback and free gifts go in `note` (subtract cashback only if confirmed on the product page; never value gifts).
-- **Check every source you were given.** Order: `history` sources first (Tweakers Pricewatch has a price-history graph: read low / median if visible), then aggregators, then shops.
+- **Check every source you were given.** Order: `history` sources first (Tweakers Pricewatch has a price-history graph: read low / median if visible), then aggregators, then the product's **official brand store** (`type: "brand"` whose `brand` matches the product, e.g. lg.com/nl for LG — also note any brand cashback/promo shown there), then shops.
+- `type: "brand"` sources for other brands: skip, no row.
 - **Find product pages, don't guess URLs:** use the saved `shop_urls` first; else links from Tweakers / Kieskeurig / Beslist listings; else web search `site:<domain> <SKU>`.
 - **Blocked (403/405/503, bot wall, empty page) → retry in the Playwright browser. Mandatory.** Only then `unreachable`.
 - **Cookie walls:** click "Weigeren" / "Alleen noodzakelijk" if offered, else accept. Never log in or enter personal data.

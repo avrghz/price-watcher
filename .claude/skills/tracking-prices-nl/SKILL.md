@@ -25,7 +25,7 @@ Dashboard: https://claude.ai/artifact/QAyrPRKD6srL3YnNn5AWPg
 ## Daily run (orchestrator)
 1. `git pull`. Read `watchlist.md`, `data/products.json`, `data/sources.json`.
 2. **Sync products:** watchlist code not in `products.json` → add as `active`. In `products.json` but not watchlist → set `stopped` (keep history). No active products → say so, stop.
-3. **New code?** Search it once. Exactly one matching SKU → `active`. Several variants (e.g. `RT90X8` / `RT90X8YB`) → track only the exact code written, list others in `excluded_variants`, mention in run summary.
+3. **New code?** Search it once; record its `brand`. If `sources.json` has no `type: "brand"` entry for that brand, add its official NL store (`found_via: "brand"`). Exactly one matching SKU → `active`. Several variants (e.g. `RT90X8` / `RT90X8YB`) → track only the exact code written, list others in `excluded_variants`, mention in run summary.
 4. **Dispatch one subagent per active product, in parallel (max 5 at once).** Prompt = full text of `checker.md` + the product's `products.json` entry + all `active` sources (and `dormant` ones if today is Monday) + that SKU's last 90 days of rows from `prices.json` and `verdicts.json`. No subagent tool → run `checker.md` yourself, product by product.
 5. **Merge** each subagent's JSON result. Subagents never write files; only you do:
    - append `rows` to `prices.json`, `verdict` to `verdicts.json` (replace same `date`+`sku`+`shop` rows if rerun today)

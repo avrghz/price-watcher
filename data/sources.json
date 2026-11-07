@@ -193,5 +193,165 @@
   "fail_streak": 0,
   "needs_browser": false,
   "status": "active"
+ },
+ {
+  "shop": "LG official store",
+  "domain": "lg.com/nl",
+  "type": "brand",
+  "brand": "LG",
+  "categories": [
+   "washer",
+   "dryer"
+  ],
+  "added": "2026-11-07",
+  "found_via": "seed",
+  "last_ok": null,
+  "fail_streak": 0,
+  "needs_browser": false,
+  "status": "active"
+ },
+ {
+  "shop": "Samsung official store",
+  "domain": "samsung.com/nl",
+  "type": "brand",
+  "brand": "Samsung",
+  "categories": [
+   "washer",
+   "dryer"
+  ],
+  "added": "2026-11-07",
+  "found_via": "seed",
+  "last_ok": null,
+  "fail_streak": 0,
+  "needs_browser": false,
+  "status": "active"
+ },
+ {
+  "shop": "Bosch official store",
+  "domain": "bosch-home.nl",
+  "type": "brand",
+  "brand": "Bosch",
+  "categories": [
+   "washer",
+   "dryer"
+  ],
+  "added": "2026-11-07",
+  "found_via": "seed",
+  "last_ok": null,
+  "fail_streak": 0,
+  "needs_browser": false,
+  "status": "active"
+ },
+ {
+  "shop": "Siemens official store",
+  "domain": "siemens-home.bsh-group.com/nl",
+  "type": "brand",
+  "brand": "Siemens",
+  "categories": [
+   "washer",
+   "dryer"
+  ],
+  "added": "2026-11-07",
+  "found_via": "seed",
+  "last_ok": null,
+  "fail_streak": 0,
+  "needs_browser": false,
+  "status": "active"
+ },
+ {
+  "shop": "Miele official store",
+  "domain": "miele.nl",
+  "type": "brand",
+  "brand": "Miele",
+  "categories": [
+   "washer",
+   "dryer"
+  ],
+  "added": "2026-11-07",
+  "found_via": "seed",
+  "last_ok": null,
+  "fail_streak": 0,
+  "needs_browser": false,
+  "status": "active"
+ },
+ {
+  "shop": "AEG official store",
+  "domain": "aeg.nl",
+  "type": "brand",
+  "brand": "AEG",
+  "categories": [
+   "washer",
+   "dryer"
+  ],
+  "added": "2026-11-07",
+  "found_via": "seed",
+  "last_ok": null,
+  "fail_streak": 0,
+  "needs_browser": false,
+  "status": "active"
+ },
+ {
+  "shop": "Electrolux official store",
+  "domain": "electrolux.nl",
+  "type": "brand",
+  "brand": "Electrolux",
+  "categories": [
+   "washer",
+   "dryer"
+  ],
+  "added": "2026-11-07",
+  "found_via": "seed",
+  "last_ok": null,
+  "fail_streak": 0,
+  "needs_browser": false,
+  "status": "active"
+ },
+ {
+  "shop": "Whirlpool official store",
+  "domain": "whirlpool.nl",
+  "type": "brand",
+  "brand": "Whirlpool",
+  "categories": [
+   "washer",
+   "dryer"
+  ],
+  "added": "2026-11-07",
+  "found_via": "seed",
+  "last_ok": null,
+  "fail_streak": 0,
+  "needs_browser": false,
+  "status": "active"
+ },
+ {
+  "shop": "Beko official store",
+  "domain": "beko.com/nl-nl",
+  "type": "brand",
+  "brand": "Beko",
+  "categories": [
+   "washer",
+   "dryer"
+  ],
+  "added": "2026-11-07",
+  "found_via": "seed",
+  "last_ok": null,
+  "fail_streak": 0,
+  "needs_browser": false,
+  "status": "active"
+ },
+ {
+  "shop": "Haier official store",
+  "domain": "haier.nl",
+  "type": "brand",
+  "brand": "Haier",
+  "categories": [
+   "washer",
+   "dryer"
+  ],
+  "added": "2026-11-07",
+  "found_via": "seed",
+  "last_ok": null,
+  "fail_streak": 0,
+  "needs_browser": false,
+  "status": "active"
  }
 ]
