@@ -32,5 +32,22 @@
   "lowest_price": 639,
   "lowest_period": "3–5 Oct 2026",
   "lowest_source": "Tweakers history"
+ },
+ {
+  "date": "2026-11-07",
+  "sku": "F4WX859Y.RT90X8",
+  "product": "LG washer + dryer bundle",
+  "verdict": "NEUTRAL",
+  "confidence": "low",
+  "cheapest_shop": "LG official store",
+  "cheapest_total": 1399,
+  "history_days": 1,
+  "lowest_price": 1399,
+  "lowest_period": "7 Nov 2026 (tracking started)",
+  "lowest_source": "own log",
+  "target_price": null,
+  "target_basis": "Not enough history yet (1 day)",
+  "alert": false,
+  "reason": "€29 cheaper than buying separately (€629 + €799 = €1,428). Dryer dipped to €639 in Oct, so a Black Friday bundle deal may go lower."
  }
 ]

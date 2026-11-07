@@ -34,5 +34,19 @@
    "lg.com/nl": "https://www.lg.com/nl/wasmachines-en-drogers/drogers/rt90x8/"
   },
   "brand": "LG"
+ },
+ {
+  "sku": "F4WX859Y.RT90X8",
+  "name": "LG F4WX859Y + RT90X8 bundle",
+  "brand": "LG",
+  "status": "active",
+  "added": "2026-11-07",
+  "bundle_of": [
+   "F4WX859Y",
+   "RT90X8"
+  ],
+  "shop_urls": {
+   "lg.com/nl": "https://www.lg.com/nl/wasmachines-en-drogers/wasmachines/f4wx859y-rt90x8/"
+  }
  }
 ]
