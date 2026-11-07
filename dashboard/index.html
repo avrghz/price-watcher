@@ -20,11 +20,11 @@
 .pw-facts small { color: var(--color-fg-muted); font-size: var(--cds-font-size-caption); }
 
 .pw-drill { border-top: 1px solid var(--color-border-line); margin-top: var(--cds-gap-xs); }
-.pw-drill > summary { cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; min-height: 48px; font-weight: var(--cds-font-weight-medium); }
-.pw-drill > summary::-webkit-details-marker { display: none; }
-.pw-drill > summary::after { content: "▾"; color: var(--color-fg-muted); transition: transform var(--cds-dur-slow); }
-.pw-drill[open] > summary::after { transform: rotate(180deg); }
-.pw-drill > summary:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; border-radius: var(--cds-radius); }
+.pw-toggle { all: unset; box-sizing: border-box; width: 100%; cursor: pointer; display: flex; align-items: center; justify-content: space-between; gap: var(--cds-gap-sm); min-height: 48px; font: inherit; font-weight: var(--cds-font-weight-medium); color: var(--color-fg); -webkit-tap-highlight-color: transparent; touch-action: manipulation; }
+.pw-toggle::after { content: "▾"; color: var(--color-fg-muted); transition: transform var(--cds-dur-slow); }
+.pw-drill.open .pw-toggle::after { transform: rotate(180deg); }
+.pw-toggle:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; border-radius: var(--cds-radius); }
+.pw-panel { padding-bottom: var(--cds-gap-xs); }
 .pw-shops { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
 .pw-shop { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2px var(--cds-gap-sm); min-height: 56px; padding: 8px var(--cds-pad-sm); border: 1px solid var(--color-border-line); border-radius: var(--cds-radius); text-decoration: none; color: inherit; background: var(--color-bg); }
 .pw-shop:hover { border-color: var(--color-fg-muted); }
@@ -123,6 +123,8 @@ const shopLink = (r, best) => {
   return a;
 };
 
+window.PW_OPEN = window.PW_OPEN || new Set();
+const OPEN = window.PW_OPEN;
 const STATUS = {'unreachable': 'blocked', 'not found': 'not listed', 'partial': 'no delivery cost', 'aggregator': 'comparison'};
 
 dash.draw('cards', (root) => {
@@ -148,8 +150,15 @@ dash.draw('cards', (root) => {
     const priced = mine.filter((x) => x.total_delivered != null).sort((a, b) => a.total_delivered - b.total_delivered || a.shop.localeCompare(b.shop));
     const rest = mine.filter((x) => x.total_delivered == null).sort((a, b) => a.shop.localeCompare(b.shop));
     const best = priced.find((x) => x.source === 'fetched');
-    const det = el('details', 'pw-drill');
-    det.append(el('summary', null, `Compare ${priced.length} priced shop${priced.length === 1 ? '' : 's'}` + (rest.length ? ` · ${rest.length} without price` : '')));
+    const wrap = el('div', 'pw-drill');
+    const btn = el('button', 'pw-toggle', `Compare ${priced.length} priced shop${priced.length === 1 ? '' : 's'}` + (rest.length ? ` · ${rest.length} without price` : ''));
+    btn.type = 'button';
+    const det = el('div', 'pw-panel'); det.id = 'shops-' + r.sku;
+    btn.setAttribute('aria-controls', det.id);
+    const setOpen = (o) => { btn.setAttribute('aria-expanded', String(o)); det.hidden = !o; wrap.classList.toggle('open', o); };
+    setOpen(OPEN.has(r.sku));
+    btn.addEventListener('click', (ev) => { ev.preventDefault(); ev.stopPropagation(); const o = !OPEN.has(r.sku); o ? OPEN.add(r.sku) : OPEN.delete(r.sku); setOpen(o); });
+    wrap.append(btn, det);
     const ul = el('ul', 'pw-shops');
     for (const s of priced) { const li = el('li'); li.append(shopLink(s, s === best)); ul.append(li); }
     det.append(ul);
@@ -165,7 +174,7 @@ dash.draw('cards', (root) => {
       }
       det.append(nop);
     }
-    card.append(det);
+    card.append(wrap);
     root.append(card);
   }
 });
