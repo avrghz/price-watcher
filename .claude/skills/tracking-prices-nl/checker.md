@@ -41,6 +41,7 @@ Pool = shop-confirmed daily lows from your history + Tweakers history (last 365 
 - `target_basis`: one line, e.g. "20th pct of 92 days (Tweakers + own log); all-time low €579 on 2025-11-28".
 - Fewer than 14 data points → `target_price: null`, basis "Not enough history yet (N days)".
 - If today's cheapest ≤ `target_price` → verdict BUY regardless of other rules.
+- `lowest_price` / `lowest_period` / `lowest_source`: the lowest shop-confirmed or Tweakers daily low ever, and the date range it held (e.g. "3–5 Oct 2026"). Always fill these.
 
 ## Return exactly this JSON (nothing else)
 ```json
@@ -52,7 +53,8 @@ Pool = shop-confirmed daily lows from your history + Tweakers history (last 365 
   ],
   "verdict": {"date": "YYYY-MM-DD", "sku": "RT90X8", "product": "LG RT90X8 dryer (white)",
      "verdict": "NEUTRAL", "confidence": "low", "cheapest_shop": "MediaMarkt", "cheapest_total": 799,
-     "history_days": 1, "target_price": null, "target_basis": "Not enough history yet (1 day)",
+     "history_days": 1, "lowest_price": 639, "lowest_period": "3–5 Oct 2026", "lowest_source": "Tweakers history",
+     "target_price": null, "target_basis": "Not enough history yet (1 day)",
      "alert": false, "reason": "One sentence."},
   "shop_urls": {"mediamarkt.nl": "https://…"},
   "source_results": {"coolblue.nl": {"ok": false, "needs_browser": true}},

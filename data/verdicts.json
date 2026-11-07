@@ -11,7 +11,10 @@
   "alert": false,
   "reason": "No price history yet. Black Friday prices run until 30 Nov, so waiting until 27 Nov costs nothing.",
   "target_price": null,
-  "target_basis": "Not on Tweakers; own history only (1 day)"
+  "target_basis": "Not on Tweakers; own history only (1 day)",
+  "lowest_price": 629,
+  "lowest_period": "7 Nov 2026 (tracking started)",
+  "lowest_source": "own log"
  },
  {
   "date": "2026-11-07",
@@ -25,6 +28,9 @@
   "alert": false,
   "reason": "€799 is above the 90-day median (€795) and it dropped to €639–€698 in Oct; Black Friday is 27 Nov. Wait for ≤ €795, ideally under €700.",
   "target_price": 795,
-  "target_basis": "20th pct of 231 days Tweakers lows (Mar–Nov 2026); low €639 on 3–5 Oct; €698 late Oct. Some Tweakers lows may be the RT90X8C variant."
+  "target_basis": "20th pct of 231 days Tweakers lows (Mar–Nov 2026); low €639 on 3–5 Oct; €698 late Oct. Some Tweakers lows may be the RT90X8C variant.",
+  "lowest_price": 639,
+  "lowest_period": "3–5 Oct 2026",
+  "lowest_source": "Tweakers history"
  }
 ]
