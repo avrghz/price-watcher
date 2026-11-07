@@ -21,9 +21,9 @@
   "confidence": "low",
   "cheapest_shop": "MediaMarkt",
   "cheapest_total": 799,
-  "history_days": 0,
+  "history_days": 1,
   "alert": false,
-  "reason": "No price history yet. Black Friday prices run until 30 Nov, so waiting until 27 Nov costs nothing.",
+  "reason": "€799 at 4 shops, below bol's 90-day most-shown €839. Too little history for BUY; Black Friday prices run until 30 Nov.",
   "target_price": null,
   "target_basis": "Not enough history yet (1 day)"
  }

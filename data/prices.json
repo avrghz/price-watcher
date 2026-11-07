@@ -134,13 +134,46 @@
  {
   "date": "2026-11-07",
   "sku": "RT90X8",
+  "shop": "Tweakers Pricewatch",
+  "total_delivered": null,
+  "stock": "",
+  "status": "aggregator",
+  "source": "aggregator",
+  "url": "https://tweakers.net/pricewatch/2329930/lg-rt90x8.html",
+  "note": "5 shops listed; €745 clickout is RT90X8C. No history graph found."
+ },
+ {
+  "date": "2026-11-07",
+  "sku": "RT90X8",
+  "shop": "Kieskeurig",
+  "total_delivered": null,
+  "stock": "",
+  "status": "aggregator",
+  "source": "aggregator",
+  "url": "https://www.kieskeurig.nl/wasdroger/product/52144850-lg-rt90x8-wasdroger-vrijstaand-voorlader-9-kg-wit",
+  "note": "€745 listings are RT90X8C pages"
+ },
+ {
+  "date": "2026-11-07",
+  "sku": "RT90X8",
+  "shop": "Beslist",
+  "total_delivered": null,
+  "stock": "",
+  "status": "aggregator",
+  "source": "aggregator",
+  "url": "https://www.beslist.nl/p/wasdroger-rt90x8-efficient-gebruiksvriendelijke-interface-diverse-droogprogramma-s/12000/8806096198186/",
+  "note": "From €799; chart not readable"
+ },
+ {
+  "date": "2026-11-07",
+  "sku": "RT90X8",
   "shop": "MediaMarkt",
   "total_delivered": 799,
   "stock": "In stock",
   "status": "ok",
   "source": "fetched",
   "url": "https://www.mediamarkt.nl/nl/product/_lg-rt90x8-condensdroger-9kg-62-db-energielabel-a-1895827.html",
-  "note": "Free next-day delivery"
+  "note": "Free next-day delivery; €50 cashback unconfirmed"
  },
  {
   "date": "2026-11-07",
@@ -156,79 +189,35 @@
  {
   "date": "2026-11-07",
   "sku": "RT90X8",
-  "shop": "Keukenloods",
-  "total_delivered": 745,
-  "stock": "",
-  "status": "aggregator",
-  "source": "aggregator",
-  "url": "https://www.kieskeurig.nl/search?q=RT90X8",
-  "note": "Seen on Kieskeurig only; shop page 404"
- },
- {
-  "date": "2026-11-07",
-  "sku": "RT90X8",
   "shop": "bol.com",
-  "total_delivered": null,
-  "stock": "",
-  "status": "partial",
-  "source": "",
+  "total_delivered": 799,
+  "stock": "In stock",
+  "status": "ok",
+  "source": "fetched",
   "url": "https://www.bol.com/nl/nl/p/rt90x8/9300000263646495/",
-  "note": "€799 on search page only"
- },
- {
-  "date": "2026-11-07",
-  "sku": "RT90X8",
-  "shop": "Tweakers",
-  "total_delivered": null,
-  "stock": "",
-  "status": "unreachable",
-  "source": "",
-  "url": "https://tweakers.net/pricewatch/zoeken/?keyword=RT90X8",
-  "note": ""
- },
- {
-  "date": "2026-11-07",
-  "sku": "RT90X8",
-  "shop": "Coolblue",
-  "total_delivered": null,
-  "stock": "",
-  "status": "unreachable",
-  "source": "",
-  "url": "https://www.coolblue.nl/zoeken?query=RT90X8",
-  "note": ""
- },
- {
-  "date": "2026-11-07",
-  "sku": "RT90X8",
-  "shop": "Beslist",
-  "total_delivered": null,
-  "stock": "",
-  "status": "unreachable",
-  "source": "",
-  "url": "https://www.beslist.nl/products/r/RT90X8/",
-  "note": ""
- },
- {
-  "date": "2026-11-07",
-  "sku": "RT90X8",
-  "shop": "Amazon.nl",
-  "total_delivered": null,
-  "stock": "",
-  "status": "unreachable",
-  "source": "",
-  "url": "https://www.amazon.nl/s?k=LG+RT90X8",
-  "note": ""
+  "note": "Partner seller; most-shown price 90d €839"
  },
  {
   "date": "2026-11-07",
   "sku": "RT90X8",
   "shop": "Expert",
-  "total_delivered": null,
+  "total_delivered": 799,
   "stock": "",
-  "status": "unreachable",
-  "source": "",
-  "url": "https://www.expert.nl/",
-  "note": ""
+  "status": "ok",
+  "source": "fetched",
+  "url": "https://www.expert.nl/lg-rt90x8-372659623",
+  "note": "Free standard delivery"
+ },
+ {
+  "date": "2026-11-07",
+  "sku": "RT90X8",
+  "shop": "Electro World",
+  "total_delivered": null,
+  "stock": "Delivered in 1 working day",
+  "status": "partial",
+  "source": "fetched",
+  "url": "https://www.electroworld.nl/lg-rt90x8-8806096198186",
+  "note": "€799; delivery cost not shown"
  },
  {
   "date": "2026-11-07",
@@ -238,8 +227,41 @@
   "stock": "",
   "status": "not found",
   "source": "",
-  "url": "https://www.bemmelenkroon.nl/",
-  "note": "Only RT90X8C / YB pages exist"
+  "url": "https://www.bemmelenkroon.nl/merken/lg/rt90x8c-lgv/",
+  "note": "Only RT90X8C (€745)"
+ },
+ {
+  "date": "2026-11-07",
+  "sku": "RT90X8",
+  "shop": "Keukenloods",
+  "total_delivered": null,
+  "stock": "",
+  "status": "not found",
+  "source": "",
+  "url": "https://www.keukenloods.nl/product/lg-rt90x8c-wasdroger-lgv/",
+  "note": "Only RT90X8C (€745)"
+ },
+ {
+  "date": "2026-11-07",
+  "sku": "RT90X8",
+  "shop": "Coolblue",
+  "total_delivered": null,
+  "stock": "",
+  "status": "not found",
+  "source": "",
+  "url": "https://www.coolblue.nl/zoeken?query=RT90X8",
+  "note": "No results"
+ },
+ {
+  "date": "2026-11-07",
+  "sku": "RT90X8",
+  "shop": "Amazon.nl",
+  "total_delivered": null,
+  "stock": "",
+  "status": "not found",
+  "source": "",
+  "url": "https://www.amazon.nl/s?k=LG+RT90X8",
+  "note": "No results"
  },
  {
   "date": "2026-11-07",
@@ -249,8 +271,8 @@
   "stock": "",
   "status": "not found",
   "source": "",
-  "url": "https://www.ep.nl/",
-  "note": ""
+  "url": "https://www.ep.nl/zoeken/?q=RT90X8",
+  "note": "Only RT90X8YB (€899, sold out)"
  },
  {
   "date": "2026-11-07",
@@ -260,7 +282,7 @@
   "stock": "",
   "status": "not found",
   "source": "",
-  "url": "https://www.wehkamp.nl/",
-  "note": ""
+  "url": "https://www.wehkamp.nl/zoeken/?term=RT90X8",
+  "note": "No match"
  }
 ]

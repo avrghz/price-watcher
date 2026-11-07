@@ -17,11 +17,16 @@ You check **one product** across Dutch shops today and return JSON. You write no
 - **Find product pages, don't guess URLs:** use the saved `shop_urls` first; else links from Tweakers / Kieskeurig / Beslist listings; else web search `site:<domain> <SKU>`.
 - **Blocked (403/405/503, bot wall, empty page) → retry in the Playwright browser. Mandatory.** Only then `unreachable`.
 - **Cookie walls:** click "Weigeren" / "Alleen noodzakelijk" if offered, else accept. Never log in or enter personal data.
-- Price seen only on an aggregator (shop page unreachable): row with `status: "aggregator"`, `source: "aggregator"`. Never the cheapest.
+- **Aggregator listings lie about variants.** Before using any aggregator price, follow its clickout and check the SKU on the shop page. Wrong variant → that shop is `not found` for this SKU (note which variant it was).
+- Price seen only on an aggregator, clickout verified but shop page unreadable: row with `status: "aggregator"`, `source: "aggregator"`. Never the cheapest.
+- Rows for history/aggregator sources themselves (Tweakers, Kieskeurig, Beslist): `status: "aggregator"`, `total_delivered: null`, listings summary in `note`.
+- Delivery cost not shown on the product page and no site-wide "gratis bezorging" visible → `status: "partial"`, `total_delivered: null`, price in `note`.
+- **History hints:** collect any real history figure a page shows — bol "meest getoonde prijs afgelopen 90 dagen", Beslist "Prijsontwikkeling" values (hover the chart in Playwright to read points), Tweakers price history (product page → "Prijsverloop"/"Prijshistorie" tab, if present). Return them in `history_hints`. An SVG chart you cannot read is not data.
 - **New sources:** any NL shop listed on Tweakers / Kieskeurig / Beslist for this SKU that is not in your source list → check it too, and report it in `new_sources`.
 
 ## Verdict
-Use the history you were given + Tweakers history.
+Use the history you were given + `history_hints`. A hint's 90-day figure (e.g. bol's most-shown price) may stand in for the 90-day median.
+- **BUY requires evidence:** at least 14 days of own history, OR a history hint covering ≥ 60 days. Without that, BUY is not allowed — use NEUTRAL (or WAIT if a sales event is within 21 days and prices aren't already marked as that event's deal).
 - **BUY**: today's lowest shop-confirmed `total_delivered` ≤ historical low + 3%, OR ≥ 10% below 90-day median.
 - **WAIT**: above 90-day median AND a sales event within 21 days (Black Friday = last Friday of Nov, Cyber Monday, January sales), or a clear downward trend.
 - **NEUTRAL**: otherwise.
@@ -51,7 +56,9 @@ Pool = shop-confirmed daily lows from your history + Tweakers history (last 365 
      "alert": false, "reason": "One sentence."},
   "shop_urls": {"mediamarkt.nl": "https://…"},
   "source_results": {"coolblue.nl": {"ok": false, "needs_browser": true}},
+  "history_hints": [{"source": "bol.com", "kind": "most_shown_90d", "value": 839, "days": 90}],
   "new_sources": [{"shop": "Witgoedhandel X", "domain": "x.nl", "type": "shop", "categories": ["dryer"], "found_via": "tweakers"}]
 }
 ```
+`source_results[domain].ok` = the page was reached and read (even if the SKU was not listed); `false` = blocked/errored after the browser retry. Include every source checked, plus any `shop_urls` you found (aggregators included).
 `status` is one of `ok`, `unreachable`, `not found`, `partial`, `aggregator`. `total_delivered` is `null` unless `ok` or `aggregator`. One row per source checked.
