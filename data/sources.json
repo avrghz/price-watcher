@@ -1,0 +1,197 @@
+[
+ {
+  "shop": "Tweakers Pricewatch",
+  "domain": "tweakers.net",
+  "type": "history",
+  "categories": [
+   "washer",
+   "dryer"
+  ],
+  "added": "2026-11-07",
+  "found_via": "seed",
+  "last_ok": null,
+  "fail_streak": 1,
+  "needs_browser": true,
+  "status": "active"
+ },
+ {
+  "shop": "Kieskeurig",
+  "domain": "kieskeurig.nl",
+  "type": "aggregator",
+  "categories": [
+   "washer",
+   "dryer"
+  ],
+  "added": "2026-11-07",
+  "found_via": "seed",
+  "last_ok": "2026-11-07",
+  "fail_streak": 0,
+  "needs_browser": false,
+  "status": "active"
+ },
+ {
+  "shop": "Beslist",
+  "domain": "beslist.nl",
+  "type": "aggregator",
+  "categories": [
+   "washer",
+   "dryer"
+  ],
+  "added": "2026-11-07",
+  "found_via": "seed",
+  "last_ok": null,
+  "fail_streak": 1,
+  "needs_browser": true,
+  "status": "active"
+ },
+ {
+  "shop": "Coolblue",
+  "domain": "coolblue.nl",
+  "type": "shop",
+  "categories": [
+   "washer",
+   "dryer"
+  ],
+  "added": "2026-11-07",
+  "found_via": "seed",
+  "last_ok": null,
+  "fail_streak": 1,
+  "needs_browser": true,
+  "status": "active"
+ },
+ {
+  "shop": "bol.com",
+  "domain": "bol.com",
+  "type": "shop",
+  "categories": [
+   "washer",
+   "dryer"
+  ],
+  "added": "2026-11-07",
+  "found_via": "seed",
+  "last_ok": "2026-11-07",
+  "fail_streak": 0,
+  "needs_browser": false,
+  "status": "active"
+ },
+ {
+  "shop": "MediaMarkt",
+  "domain": "mediamarkt.nl",
+  "type": "shop",
+  "categories": [
+   "washer",
+   "dryer"
+  ],
+  "added": "2026-11-07",
+  "found_via": "seed",
+  "last_ok": "2026-11-07",
+  "fail_streak": 0,
+  "needs_browser": false,
+  "status": "active"
+ },
+ {
+  "shop": "EP",
+  "domain": "ep.nl",
+  "type": "shop",
+  "categories": [
+   "washer",
+   "dryer"
+  ],
+  "added": "2026-11-07",
+  "found_via": "seed",
+  "last_ok": "2026-11-07",
+  "fail_streak": 0,
+  "needs_browser": false,
+  "status": "active"
+ },
+ {
+  "shop": "Expert",
+  "domain": "expert.nl",
+  "type": "shop",
+  "categories": [
+   "washer",
+   "dryer"
+  ],
+  "added": "2026-11-07",
+  "found_via": "seed",
+  "last_ok": null,
+  "fail_streak": 1,
+  "needs_browser": false,
+  "status": "active"
+ },
+ {
+  "shop": "Wehkamp",
+  "domain": "wehkamp.nl",
+  "type": "shop",
+  "categories": [
+   "washer",
+   "dryer"
+  ],
+  "added": "2026-11-07",
+  "found_via": "seed",
+  "last_ok": "2026-11-07",
+  "fail_streak": 0,
+  "needs_browser": false,
+  "status": "active"
+ },
+ {
+  "shop": "Amazon.nl",
+  "domain": "amazon.nl",
+  "type": "shop",
+  "categories": [
+   "washer",
+   "dryer"
+  ],
+  "added": "2026-11-07",
+  "found_via": "seed",
+  "last_ok": null,
+  "fail_streak": 1,
+  "needs_browser": true,
+  "status": "active"
+ },
+ {
+  "shop": "Bemmel & Kroon",
+  "domain": "bemmelenkroon.nl",
+  "type": "shop",
+  "categories": [
+   "washer",
+   "dryer"
+  ],
+  "added": "2026-11-07",
+  "found_via": "seed",
+  "last_ok": "2026-11-07",
+  "fail_streak": 0,
+  "needs_browser": false,
+  "status": "active"
+ },
+ {
+  "shop": "De Schouw Witgoed",
+  "domain": "deschouwwitgoed.nl",
+  "type": "shop",
+  "categories": [
+   "washer",
+   "dryer"
+  ],
+  "added": "2026-11-07",
+  "found_via": "seed",
+  "last_ok": "2026-11-07",
+  "fail_streak": 0,
+  "needs_browser": false,
+  "status": "active"
+ },
+ {
+  "shop": "Keukenloods",
+  "domain": "keukenloods.nl",
+  "type": "shop",
+  "categories": [
+   "washer",
+   "dryer"
+  ],
+  "added": "2026-11-07",
+  "found_via": "seed",
+  "last_ok": "2026-11-07",
+  "fail_streak": 0,
+  "needs_browser": false,
+  "status": "active"
+ }
+]

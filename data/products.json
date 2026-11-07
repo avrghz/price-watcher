@@ -1,4 +1,29 @@
 [
- {"sku": "F4WX859Y", "name": "LG F4WX859Y washer", "ean": "8806096118900", "status": "active", "added": "2026-11-07"},
- {"sku": "RT90X8", "name": "LG RT90X8 dryer (white)", "status": "active", "added": "2026-11-07", "excluded_variants": ["RT90X8YB", "RT90X8C"]}
+ {
+  "sku": "F4WX859Y",
+  "name": "LG F4WX859Y washer",
+  "ean": "8806096118900",
+  "status": "active",
+  "added": "2026-11-07",
+  "shop_urls": {
+   "bemmelenkroon.nl": "https://www.bemmelenkroon.nl/merken/lg/f4wx859y-lgv/",
+   "deschouwwitgoed.nl": "https://www.deschouwwitgoed.nl/lg-f4wx859y",
+   "keukenloods.nl": "https://www.keukenloods.nl/product/lg-f4wx859y-wasmachine-lgv/"
+  }
+ },
+ {
+  "sku": "RT90X8",
+  "name": "LG RT90X8 dryer (white)",
+  "status": "active",
+  "added": "2026-11-07",
+  "excluded_variants": [
+   "RT90X8YB",
+   "RT90X8C"
+  ],
+  "shop_urls": {
+   "mediamarkt.nl": "https://www.mediamarkt.nl/nl/product/_lg-rt90x8-condensdroger-9kg-62-db-energielabel-a-1895827.html",
+   "deschouwwitgoed.nl": "https://www.deschouwwitgoed.nl/lg-rt90x8",
+   "bol.com": "https://www.bol.com/nl/nl/p/rt90x8/9300000263646495/"
+  }
+ }
 ]
