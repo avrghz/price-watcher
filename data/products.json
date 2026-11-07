@@ -48,5 +48,61 @@
   "shop_urls": {
    "lg.com/nl": "https://www.lg.com/nl/wasmachines-en-drogers/wasmachines/f4wx859y-rt90x8/"
   }
+ },
+ {
+  "sku": "WGH24407NL",
+  "name": "Bosch Serie 6 WGH24407NL washer 9 kg",
+  "brand": "Bosch",
+  "ean": "4242005458745",
+  "status": "active",
+  "added": "2026-11-07",
+  "shop_urls": {
+   "bosch-home.nl": "https://www.bosch-home.nl/nl/product/wasmachines-en-drogers/wasmachines/voorlader-wasmachines/WGH24407NL",
+   "mediamarkt.nl": "https://www.mediamarkt.nl/nl/product/_bosch-wgh24407nl-serie-6-iron-assist-wasmachine-wasmachine-9-kg-1400-rpm-a-1871228.html",
+   "kieskeurig.nl": "https://www.kieskeurig.nl/wasmachine/product/51979667-bosch-wgh24407nl",
+   "beslist.nl": "https://www.beslist.nl/products/r/WGH24407NL/"
+  }
+ },
+ {
+  "sku": "WQJ23200NL",
+  "name": "Bosch Serie 6 WQJ23200NL heat-pump dryer 8 kg",
+  "brand": "Bosch",
+  "ean": "4242005564439",
+  "status": "active",
+  "added": "2026-11-07",
+  "excluded_variants": [
+   "WQJ23209NL"
+  ],
+  "shop_urls": {
+   "kieskeurig.nl": "https://www.kieskeurig.nl/wasdroger/product/52195515-bosch-serie-6-wqj23200nl-wasdroger-vrijstaand-voorlader-8-kg-wit",
+   "beslist.nl": "https://www.beslist.nl/p/bosch-wqj23200nl-warmtepompdroger-wit/12000/4242005564439/",
+   "bosch-home.nl": "https://www.bosch-home.nl/nl/product/wasmachines-en-drogers/drogers/warmtepompdrogers/WQJ23200NL",
+   "coolblue.nl": "https://www.coolblue.nl/product/980280/bosch-wqj23200nl.html",
+   "bol.com": "https://www.bol.com/nl/nl/p/bosch-serie-6-wqj23200nl-warmtepompdroger-met-8-kg-vulgewicht-easy-clean-filter-en-auto-dry/9300000260841524/",
+   "mediamarkt.nl": "https://www.mediamarkt.nl/en/product/_bosch-wqj23200nl-heat-pump-dryer-8-kg-62-db-energy-label-d-heat-pump-dryer-1903557.html",
+   "ep.nl": "https://www.ep.nl/product/bosch-wqj23200nl-1519346",
+   "expert.nl": "https://www.expert.nl/bosch-wqj23200nl-372663216",
+   "bemmelenkroon.nl": "https://www.bemmelenkroon.nl/merken/bosch/wqj23200nl-bosv/",
+   "deschouwwitgoed.nl": "https://www.deschouwwitgoed.nl/bosch-wqj23200nl",
+   "keukenloods.nl": "https://www.keukenloods.nl/product/bosch-wqj23200nl-wasdroger-bosv/",
+   "electroworld.nl": "https://www.electroworld.nl/bosch-wqj23200nl-serie-6-home-connect-4242005564439"
+  }
+ },
+ {
+  "sku": "WQN246D0NL",
+  "name": "Bosch Serie 6 WQN246D0NL heat-pump dryer 9 kg",
+  "brand": "Bosch",
+  "ean": "4242005571383",
+  "status": "active",
+  "added": "2026-11-07",
+  "shop_urls": {
+   "tweakers.net": "https://tweakers.net/pricewatch/2384338/bosch-wqn246d0nl.html",
+   "keukenloods.nl": "https://www.keukenloods.nl/product/bosch-wqn246d0nl-wasdroger-bosv/",
+   "bemmelenkroon.nl": "https://www.bemmelenkroon.nl/merken/bosch/wqn246d0nl-bosv/",
+   "bol.com": "https://www.bol.com/nl/nl/p/bosch-serie-6-wqn246d0nl-warmtepompdroger-9-kg-zelfreinigende-condensor-wit/9300000355474032/",
+   "mediamarkt.nl": "https://www.mediamarkt.nl/nl/product/_bosch-wqn246d0nl-9-kg-59-db-energielabel-b-warmtepompdroger-1914276.html",
+   "ep.nl": "https://www.ep.nl/product/bosch-wqn246d0nl-1534339",
+   "deschouwwitgoed.nl": "https://www.deschouwwitgoed.nl/bosch-wqn246d0nl"
+  }
  }
 ]

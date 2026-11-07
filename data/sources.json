@@ -12,7 +12,8 @@
   "last_ok": "2026-11-07",
   "fail_streak": 0,
   "needs_browser": true,
-  "status": "active"
+  "status": "active",
+  "search_url": "https://tweakers.net/pricewatch/zoeken/?keyword={q}"
  },
  {
   "shop": "Kieskeurig",
@@ -27,7 +28,8 @@
   "last_ok": "2026-11-07",
   "fail_streak": 0,
   "needs_browser": false,
-  "status": "active"
+  "status": "active",
+  "search_url": "https://www.kieskeurig.nl/search?q={q}"
  },
  {
   "shop": "Beslist",
@@ -42,7 +44,8 @@
   "last_ok": "2026-11-07",
   "fail_streak": 0,
   "needs_browser": true,
-  "status": "active"
+  "status": "active",
+  "search_url": "https://www.beslist.nl/products/r/{q}/"
  },
  {
   "shop": "Coolblue",
@@ -57,7 +60,8 @@
   "last_ok": "2026-11-07",
   "fail_streak": 0,
   "needs_browser": true,
-  "status": "active"
+  "status": "active",
+  "search_url": "https://www.coolblue.nl/zoeken?query={q}"
  },
  {
   "shop": "bol.com",
@@ -72,7 +76,8 @@
   "last_ok": "2026-11-07",
   "fail_streak": 0,
   "needs_browser": true,
-  "status": "active"
+  "status": "active",
+  "search_url": "https://www.bol.com/nl/nl/s/?searchtext={q}"
  },
  {
   "shop": "MediaMarkt",
@@ -102,7 +107,8 @@
   "last_ok": "2026-11-07",
   "fail_streak": 0,
   "needs_browser": false,
-  "status": "active"
+  "status": "active",
+  "search_url": "https://www.ep.nl/zoeken/?q={q}"
  },
  {
   "shop": "Expert",
@@ -117,7 +123,8 @@
   "last_ok": "2026-11-07",
   "fail_streak": 0,
   "needs_browser": true,
-  "status": "active"
+  "status": "active",
+  "search_url": "https://www.expert.nl/search?q={q}"
  },
  {
   "shop": "Wehkamp",
@@ -132,7 +139,8 @@
   "last_ok": "2026-11-07",
   "fail_streak": 0,
   "needs_browser": true,
-  "status": "active"
+  "status": "active",
+  "search_url": "https://www.wehkamp.nl/zoeken/?term={q}"
  },
  {
   "shop": "Amazon.nl",
@@ -147,7 +155,8 @@
   "last_ok": "2026-11-07",
   "fail_streak": 0,
   "needs_browser": true,
-  "status": "active"
+  "status": "active",
+  "search_url": "https://www.amazon.nl/s?k={q}"
  },
  {
   "shop": "Bemmel & Kroon",
@@ -208,7 +217,8 @@
   "last_ok": "2026-11-07",
   "fail_streak": 0,
   "needs_browser": true,
-  "status": "active"
+  "status": "active",
+  "search_url": "https://www.lg.com/nl/search/?search={q}"
  },
  {
   "shop": "Samsung official store",
@@ -237,10 +247,11 @@
   ],
   "added": "2026-11-07",
   "found_via": "seed",
-  "last_ok": null,
+  "last_ok": "2026-11-07",
   "fail_streak": 0,
   "needs_browser": false,
-  "status": "active"
+  "status": "active",
+  "search_url": "https://www.bosch-home.nl/nl/search?term={q}"
  },
  {
   "shop": "Siemens official store",
@@ -366,7 +377,7 @@
   "found_via": "tweakers",
   "last_ok": "2026-11-07",
   "fail_streak": 0,
-  "needs_browser": false,
+  "needs_browser": true,
   "status": "active"
  }
 ]
