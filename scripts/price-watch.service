@@ -1,8 +1,0 @@
-[Unit]
-Description=Daily NL price check (Claude)
-After=network-online.target
-
-[Service]
-Type=oneshot
-ExecStart=/bin/bash "/home/tom/Desktop/Price watcher/scripts/daily-check.sh"
-TimeoutStartSec=90min

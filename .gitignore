@@ -15,3 +15,7 @@ dashboard/
 .DS_Store
 Thumbs.db
 __pycache__/
+
+# Local tooling (skill, settings, runner) — kept on this machine only
+.claude/
+scripts/
