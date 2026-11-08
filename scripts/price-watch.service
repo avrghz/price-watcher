@@ -4,5 +4,5 @@ After=network-online.target
 
 [Service]
 Type=oneshot
-ExecStart=/home/tom/Desktop/Price\x20watcher/scripts/daily-check.sh
+ExecStart=/bin/bash "/home/tom/Desktop/Price watcher/scripts/daily-check.sh"
 TimeoutStartSec=90min
