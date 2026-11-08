@@ -812,5 +812,71 @@
   "source": "",
   "url": "https://www.amazon.nl/",
   "note": "Shared browser, no retry"
+ },
+ {
+  "date": "2026-11-08",
+  "sku": "F4WX859Y",
+  "shop": "(all sources)",
+  "total_delivered": null,
+  "stock": "",
+  "status": "unreachable",
+  "source": "",
+  "url": "",
+  "note": "no browser in cloud run; shop hosts not resolvable (outside session network allowlist). No verdict update."
+ },
+ {
+  "date": "2026-11-08",
+  "sku": "RT90X8",
+  "shop": "(all sources)",
+  "total_delivered": null,
+  "stock": "",
+  "status": "unreachable",
+  "source": "",
+  "url": "",
+  "note": "no browser in cloud run; shop hosts not resolvable (outside session network allowlist). No verdict update."
+ },
+ {
+  "date": "2026-11-08",
+  "sku": "F4WX859Y.RT90X8",
+  "shop": "(all sources)",
+  "total_delivered": null,
+  "stock": "",
+  "status": "unreachable",
+  "source": "",
+  "url": "",
+  "note": "no browser in cloud run; shop hosts not resolvable (outside session network allowlist). No verdict update."
+ },
+ {
+  "date": "2026-11-08",
+  "sku": "WGH24407NL",
+  "shop": "(all sources)",
+  "total_delivered": null,
+  "stock": "",
+  "status": "unreachable",
+  "source": "",
+  "url": "",
+  "note": "no browser in cloud run; shop hosts not resolvable (outside session network allowlist). No verdict update."
+ },
+ {
+  "date": "2026-11-08",
+  "sku": "WQJ23200NL",
+  "shop": "(all sources)",
+  "total_delivered": null,
+  "stock": "",
+  "status": "unreachable",
+  "source": "",
+  "url": "",
+  "note": "no browser in cloud run; shop hosts not resolvable (outside session network allowlist). No verdict update."
+ },
+ {
+  "date": "2026-11-08",
+  "sku": "WQN246D0NL",
+  "shop": "(all sources)",
+  "total_delivered": null,
+  "stock": "",
+  "status": "unreachable",
+  "source": "",
+  "url": "",
+  "note": "no browser in cloud run; shop hosts not resolvable (outside session network allowlist). No verdict update."
  }
 ]
