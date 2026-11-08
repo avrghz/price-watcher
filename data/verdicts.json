@@ -114,43 +114,60 @@
   "lowest_period": "7–8 Nov 2026 (tracking started)",
   "lowest_source": "own log",
   "target_price": null,
-  "target_basis": "Not enough history yet (2 days own log); Tweakers/Beslist unreachable today and the SKU was not confirmed on Tweakers",
+  "target_basis": "Not enough history yet (2 days own log); Tweakers and Beslist were bot-walled today and the SKU is not confirmed on Tweakers",
   "alert": false,
-  "reason": "Three shops hold €629 (RRP €879) with only 2 days of history, so BUY is not allowed; Black Friday is 27 Nov and De Schouw's Black Friday price runs to 30 Nov, so waiting costs nothing."
+  "reason": "Three shops (Bemmel & Kroon, De Schouw, Keukenloods) hold €629 against an RRP of €879, but there are only 2 days of history so BUY is not allowed; Black Friday is 27 Nov and De Schouw's price runs to 30 Nov, so waiting costs nothing."
+ },
+ {
+  "date": "2026-11-08",
+  "sku": "F4WX859Y.RT90X8",
+  "product": "LG F4WX859Y + RT90X8 bundle",
+  "verdict": "NEUTRAL",
+  "confidence": "low",
+  "cheapest_shop": "LG official store",
+  "cheapest_total": null,
+  "history_days": 1,
+  "lowest_price": 1399,
+  "lowest_period": "7 Nov 2026 (tracking started)",
+  "lowest_source": "own log",
+  "target_price": null,
+  "target_basis": "Not enough history yet (1 day)",
+  "alert": false,
+  "reason": "Today's bundle price could not be read (LG blocks the browser), so this carries over yesterday's €1,399, which was €29 cheaper than buying separately (€629 washer + €799 dryer = €1,428, per today's shop-confirmed part rows). Black Friday is within 21 days and there is no history, so waiting costs nothing; the members-only 5% code B/F_2026_5 could lower the bundle further."
  },
  {
   "date": "2026-11-08",
   "sku": "RT90X8",
   "product": "LG RT90X8 dryer (white)",
   "verdict": "WAIT",
-  "confidence": "medium",
+  "confidence": "high",
   "cheapest_shop": "MediaMarkt",
   "cheapest_total": 799,
   "history_days": 232,
   "lowest_price": 639,
   "lowest_period": "3–5 Oct 2026",
-  "lowest_source": "Tweakers history (carried over from 7 Nov verdict; not re-read today)",
+  "lowest_source": "Tweakers history",
   "target_price": 695,
-  "target_basis": "Carried over from 7 Nov: 10th pct of last 90 days Tweakers lows; €698 held late Oct, low €639 on 3–5 Oct. Tweakers not reachable today, so not refreshed.",
+  "target_basis": "10th pct of last 90 days Tweakers lows (own log only 2 days); €698 held 22–28 Oct, low €639 on 3–5 Oct. The Tweakers €745/€749 lows since 29 Oct may include the RT90X8C mislisting, so they are not shop-confirmed.",
   "alert": false,
-  "reason": "Shop-confirmed €799 (MediaMarkt, Expert, De Schouw) is about €100 above the €695 target and Black Friday is 27 Nov (19 days away). Wait for €695 or less."
+  "reason": "Shop-confirmed €799 (MediaMarkt, bol, Expert, De Schouw) is about €104 above the €695 target and Black Friday is 27 Nov (19 days away), so wait for €695 or less."
  },
  {
   "date": "2026-11-08",
   "sku": "WGH24407NL",
   "product": "Bosch Serie 6 WGH24407NL washer 9 kg",
   "verdict": "NEUTRAL",
-  "confidence": "low",
+  "confidence": "medium",
   "cheapest_shop": "Bosch official store",
   "cheapest_total": 824,
   "history_days": 2,
-  "lowest_price": 824,
-  "lowest_period": "7–8 Nov 2026",
-  "lowest_source": "own log (Bosch official store, code price)",
+  "lowest_price": 699,
+  "lowest_period": "unknown (before 8 Nov 2026, within the Mar–Nov 2026 chart)",
+  "lowest_source": "Kieskeurig price history (not shop-confirmed)",
   "target_price": null,
-  "target_basis": "Not enough history yet (2 days)",
+  "target_basis": "Not enough own daily history (2 days). Kieskeurig gives only summary figures (low €699, high €899, avg €861.87 since Mar 2026), not daily lows.",
   "alert": false,
-  "reason": "Bosch's own store is €824 with code ACTIE-NL-WASSENDROGEN (valid to 20 Dec), unchanged from yesterday. There is only 2 days of history and no history hint, so BUY isn't allowed. Black Friday (27 Nov) is 19 days away, but the code runs until 20 Dec, so waiting costs little. MediaMarkt is €899, or €824 after the €75 cashback."
+  "reason": "Bosch's own store is €824 with code ACTIE-NL-WASSENDROGEN (valid to 20 Dec), unchanged from yesterday, about 4% below Kieskeurig's €861.87 average but well above its €699 all-time low. That is neither within 3% of the low nor 10% below the average, so it is not a BUY. Black Friday (27 Nov) is 19 days away, but the code runs to 20 Dec, so waiting costs little. MediaMarkt is €899, or €824 after the €75 cashback."
  },
  {
   "date": "2026-11-08",
@@ -165,9 +182,9 @@
   "lowest_period": "mid-Sep – mid-Oct 2026 (on and off)",
   "lowest_source": "Beslist price chart (read 2026-11-07)",
   "target_price": 590,
-  "target_basis": "10th pct of last 90 days Beslist lows (~€594 on ~14 days, Sep–Oct); carried from 2026-11-07 because Beslist/Tweakers were unreachable today",
+  "target_basis": "10th pct of last 90 days Beslist lows (~€594 on ~14 days, Sep–Oct); carried from 2026-11-07 because Beslist and Tweakers were behind bot walls today",
   "alert": false,
-  "reason": "Still €689 at 5 shops (€614 after Bosch's €75 cashback), well above the €590 target after dropping to ~€594 in Sep–Oct, and Black Friday is 27 Nov, so wait."
+  "reason": "Five shops sell it at €689 today, which is well above the €590 target after it dropped to about €594 in Sep–Oct, and Black Friday (27 Nov) is 19 days away, so wait."
  },
  {
   "date": "2026-11-08",
@@ -177,13 +194,13 @@
   "confidence": "medium",
   "cheapest_shop": "Keukenloods",
   "cheapest_total": 949,
-  "history_days": 61,
+  "history_days": 62,
   "lowest_price": 857,
-  "lowest_period": "9–10 Sep 2026",
-  "lowest_source": "Tweakers history (hint from 7 Nov run, not re-read today)",
+  "lowest_period": "10 Sep 2026 (1 day)",
+  "lowest_source": "Tweakers history",
   "target_price": 895,
-  "target_basis": "Carried over from the 7 Nov Tweakers 60-day read plus own log: €899 held 22 Sep–24 Oct, low €857 on 9–10 Sep. Tweakers was not re-read today.",
+  "target_basis": "10th pct of 60 days Tweakers lows (read today, plus own log from 7 Nov); €899 held 22 Sep-24 Oct (33 days), €930 on 11-21 Sep, €949.97 since 25 Oct; the one-day €857 on 10 Sep is not shop-confirmed and is treated as a glitch",
   "alert": false,
-  "reason": "€949 at Keukenloods is above the €895 target and the ~€899 60-day median, Black Friday (27 Nov) is 19 days away, and it comes to about €874 after the €75 Bosch cashback (until 20 Dec), so keep waiting."
+  "reason": "€949 at Keukenloods is above the €895 target and the €899 60-day median, Black Friday (27 Nov) is 19 days away, and it comes to about €874 after the €75 Bosch cashback (until 20 Dec), so keep waiting."
  }
 ]
