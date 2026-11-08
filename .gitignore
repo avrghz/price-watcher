@@ -1,2 +1,17 @@
-.playwright-mcp/
+# Runtime / local only
 logs/
+.playwright-mcp/
+.claude/scheduled_tasks.lock
+.claude/settings.local.json
+
+# Old claude.ai dashboard source (replaced by index.html on GitHub Pages)
+dashboard/
+
+# Editor / OS clutter
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+__pycache__/
