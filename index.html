@@ -6,9 +6,9 @@
 <title>Witgoed Price Watch</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
 <style>
-:root { --bg:#faf9f5; --panel:#fff; --fg:#1f1e1c; --muted:#6b6862; --line:#e4e1d8; --ok:#2f7d4f; --warn:#b26a00; --grid:#ecebe5;
+:root { --bg:#faf9f5; --panel:#fff; --fg:#1f1e1c; --muted:#6b6862; --line:#e4e1d8; --ok:#2f7d4f; --warn:#b26a00; --grid:#ecebe5; --bad:#c62828;
   --c1:#c2410c; --c2:#2563eb; --c3:#7c3aed; --c4:#059669; --c5:#db2777; --c6:#ca8a04; }
-@media (prefers-color-scheme: dark) { :root { --bg:#1a1917; --panel:#242320; --fg:#ece9e1; --muted:#a29e95; --line:#3a3833; --ok:#5fc48a; --warn:#f0a43a; --grid:#302e2a;
+@media (prefers-color-scheme: dark) { :root { --bg:#1a1917; --panel:#242320; --fg:#ece9e1; --muted:#a29e95; --line:#3a3833; --ok:#5fc48a; --warn:#f0a43a; --grid:#302e2a; --bad:#ff6b6b;
   --c1:#fb923c; --c2:#60a5fa; --c3:#a78bfa; --c4:#34d399; --c5:#f472b6; --c6:#facc15; } }
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
@@ -24,6 +24,8 @@ h1 { font-family: Georgia, serif; font-weight: 400; font-size: 2rem; margin: 0; 
 .pill { padding: 2px 10px; border-radius: 999px; font-size: .8rem; font-weight: 600; letter-spacing: .04em; border: 1px solid currentColor; }
 .pill.buy { color: var(--ok); } .pill.wait { color: var(--warn); } .pill.neutral { color: var(--muted); }
 .alert { color: var(--ok); font-weight: 600; }
+.last { display: inline-block; padding: 2px 10px; border-radius: 999px; font-weight: 600; background: color-mix(in srgb, var(--ok) 15%, transparent); color: var(--ok); }
+.last.stale { background: color-mix(in srgb, var(--bad) 15%, transparent); color: var(--bad); }
 .facts { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; margin: 0; }
 .facts dt { color: var(--muted); } .facts dd { margin: 0; font-variant-numeric: tabular-nums; }
 .facts small { color: var(--muted); font-size: .8rem; }
@@ -53,7 +55,7 @@ h1 { font-family: Georgia, serif; font-weight: 400; font-size: 2rem; margin: 0; 
 <div class="pw">
   <header>
     <h1>Witgoed Price Watch</h1>
-    <p class="lede">Checked every morning across Dutch shops. Delivered totals incl. BTW, new only. Last check: <b id="last">—</b>.</p>
+    <p class="lede">Checked every morning across Dutch shops. Delivered totals incl. BTW, new only. Last check: <b id="last" class="last">—</b></p>
   </header>
   <section class="cards" id="cards"><p class="note">Loading…</p></section>
   <section class="card">
@@ -106,7 +108,13 @@ function shopLink(r, best) {
 function drawCards() {
   const root = document.getElementById('cards'); root.replaceChildren();
   const vs = latestVerdicts();
-  document.getElementById('last').textContent = vs.length ? fmtDay(vs.reduce((a, r) => r.date > a ? r.date : a, '')) : '—';
+  const lastDate = vs.reduce((a, r) => r.date > a ? r.date : a, '');
+  const today = new Intl.DateTimeFormat('en-CA', {timeZone: 'Europe/Amsterdam'}).format(new Date());
+  const lastEl = document.getElementById('last');
+  const stale = !lastDate || lastDate < today;
+  const days = lastDate ? Math.round((new Date(today) - new Date(lastDate)) / 864e5) : 0;
+  lastEl.textContent = lastDate ? fmtDay(lastDate) + (stale ? ` · ${days} day${days === 1 ? '' : 's'} old` : ' · today') : 'never';
+  lastEl.classList.toggle('stale', stale);
   for (const r of vs) {
     const card = el('article', 'card');
     card.append(el('h2', null, r.product || r.sku));
