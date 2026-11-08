@@ -41,8 +41,8 @@
   ],
   "added": "2026-11-07",
   "found_via": "seed",
-  "last_ok": "2026-11-07",
-  "fail_streak": 2,
+  "last_ok": "2026-11-08",
+  "fail_streak": 0,
   "needs_browser": true,
   "status": "active",
   "search_url": "https://www.beslist.nl/products/r/{q}/"
@@ -57,8 +57,8 @@
   ],
   "added": "2026-11-07",
   "found_via": "seed",
-  "last_ok": "2026-11-07",
-  "fail_streak": 2,
+  "last_ok": "2026-11-08",
+  "fail_streak": 0,
   "needs_browser": true,
   "status": "active",
   "search_url": "https://www.coolblue.nl/zoeken?query={q}"
@@ -136,8 +136,8 @@
   ],
   "added": "2026-11-07",
   "found_via": "seed",
-  "last_ok": "2026-11-07",
-  "fail_streak": 2,
+  "last_ok": "2026-11-08",
+  "fail_streak": 0,
   "needs_browser": true,
   "status": "active",
   "search_url": "https://www.wehkamp.nl/zoeken/?term={q}"
@@ -215,7 +215,7 @@
   "added": "2026-11-07",
   "found_via": "seed",
   "last_ok": "2026-11-08",
-  "fail_streak": 1,
+  "fail_streak": 0,
   "needs_browser": true,
   "status": "active",
   "search_url": "https://www.lg.com/nl/search/?search={q}"
@@ -377,6 +377,21 @@
   "found_via": "tweakers",
   "last_ok": "2026-11-08",
   "fail_streak": 0,
+  "needs_browser": true,
+  "status": "active"
+ },
+ {
+  "shop": "Witgoedhuis.nl",
+  "domain": "witgoedhuis.nl",
+  "type": "shop",
+  "categories": [
+   "dryer",
+   "washer"
+  ],
+  "added": "2026-11-08",
+  "found_via": "tweakers",
+  "last_ok": null,
+  "fail_streak": 1,
   "needs_browser": true,
   "status": "active"
  }

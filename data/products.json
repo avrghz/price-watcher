@@ -10,7 +10,8 @@
    "deschouwwitgoed.nl": "https://www.deschouwwitgoed.nl/lg-f4wx859y",
    "keukenloods.nl": "https://www.keukenloods.nl/product/lg-f4wx859y-wasmachine-lgv/",
    "lg.com/nl": "https://www.lg.com/nl/wasmachines-en-drogers/wasmachines/f4wx859y-rt90x8/",
-   "kieskeurig.nl": "https://www.kieskeurig.nl/wasmachine/product/51982156-lg-f4wx859y-9-kg"
+   "kieskeurig.nl": "https://www.kieskeurig.nl/wasmachine/product/51982156-lg-f4wx859y-9-kg",
+   "beslist.nl": "https://www.beslist.nl/products/r/F4WX859Y/"
   },
   "brand": "LG"
  },
@@ -47,7 +48,8 @@
    "RT90X8"
   ],
   "shop_urls": {
-   "lg.com/nl": "https://www.lg.com/nl/wasmachines-en-drogers/wasmachines/f4wx859y-rt90x8/"
+   "lg.com/nl": "https://www.lg.com/nl/wasmachines-en-drogers/wasmachines/f4wx859y-rt90x8/",
+   "beslist.nl": "https://www.beslist.nl/products/r/F4WX859Y.RT90X8/"
   }
  },
  {
@@ -75,6 +77,7 @@
    "WQJ23209NL"
   ],
   "shop_urls": {
+   "tweakers.net": "https://tweakers.net/pricewatch/2345928/bosch-wqj23200nl.html",
    "kieskeurig.nl": "https://www.kieskeurig.nl/wasdroger/product/52195515-bosch-serie-6-wqj23200nl-wasdroger-vrijstaand-voorlader-8-kg-wit",
    "beslist.nl": "https://www.beslist.nl/p/bosch-wqj23200nl-warmtepompdroger-wit/12000/4242005564439/",
    "bosch-home.nl": "https://www.bosch-home.nl/nl/product/wasmachines-en-drogers/drogers/warmtepompdrogers/WQJ23200NL",
@@ -106,7 +109,9 @@
    "deschouwwitgoed.nl": "https://www.deschouwwitgoed.nl/bosch-wqn246d0nl",
    "kieskeurig.nl": "https://www.kieskeurig.nl/wasdroger/product/56065044-bosch-serie-6-wqn246d0nl-wasdroger-vrijstaand-voorlader-9-kg-wit",
    "expert.nl": "https://www.expert.nl/bosch-wqn246d0nl-372667398",
-   "bosch-home.nl": "https://www.bosch-home.nl/nl/product/wasmachines-en-drogers/drogers/warmtepompdrogers/WQN246D0NL"
+   "bosch-home.nl": "https://www.bosch-home.nl/nl/product/wasmachines-en-drogers/drogers/warmtepompdrogers/WQN246D0NL",
+   "beslist.nl": "https://www.beslist.nl/p/bosch-wqn246d0nl-warmtepompdroger-wit-9-kg-serie-6/12000/4242005571383/",
+   "coolblue.nl": "https://www.coolblue.nl/product/987608/bosch-wqn246d0nl.html"
   }
  }
 ]
