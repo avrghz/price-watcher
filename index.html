@@ -24,6 +24,8 @@ h1 { font-family: Georgia, serif; font-weight: 400; font-size: 2rem; margin: 0; 
 .pill { padding: 2px 10px; border-radius: 999px; font-size: .8rem; font-weight: 600; letter-spacing: .04em; border: 1px solid currentColor; }
 .pill.buy { color: var(--ok); } .pill.wait { color: var(--warn); } .pill.neutral { color: var(--muted); }
 .alert { color: var(--ok); font-weight: 600; }
+.yours { margin: 0; padding: 8px 12px; border-radius: 8px; background: color-mix(in srgb, var(--ok) 12%, transparent); font-size: .9rem; }
+.yours b { color: var(--ok); }
 .last { display: inline-block; padding: 2px 10px; border-radius: 999px; font-weight: 600; background: color-mix(in srgb, var(--ok) 15%, transparent); color: var(--ok); }
 .last.stale { background: color-mix(in srgb, var(--bad) 15%, transparent); color: var(--bad); }
 .facts { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; margin: 0; }
@@ -99,7 +101,7 @@ function latestRows(sku) {
 function shopLink(r, best) {
   const a = el('a', 'shop' + (best ? ' best' : '')); a.href = r.url || '#'; a.target = '_blank'; a.rel = 'noopener';
   const nm = el('span', 'nm', r.shop); if (best) nm.append(el('span', 'tag', 'Cheapest'));
-  a.append(nm, el('span', 'pr', eur(r.total_delivered)));
+  a.append(nm, el('span', 'pr', r.your_price != null ? eur(r.your_price) + ' yours' : eur(r.total_delivered)));
   const bits = [r.stock, r.source === 'aggregator' ? 'price seen on comparison site only' : '', r.note].filter(Boolean);
   if (bits.length) a.append(el('span', 'meta', bits.join(' · ')));
   return a;
@@ -122,11 +124,13 @@ function drawCards() {
     top.append(el('span', 'pill ' + String(r.verdict).toLowerCase(), r.verdict), el('span', 'note', 'confidence ' + r.confidence));
     if (r.alert) top.append(el('span', 'alert', 'Good time to buy'));
     const price = el('div', 'row'); price.append(el('span', 'big', eur(r.cheapest_total)), el('span', null, 'at ' + (r.cheapest_shop || '')));
+    const yp = r.your_price != null ? el('p', 'yours') : null;
+    if (yp) { yp.append(el('b', null, 'Your price ' + eur(r.your_price)), ' at ' + (r.your_price_shop || r.cheapest_shop) + (r.your_price_note ? ' · ' + r.your_price_note : '')); }
     const facts = el('dl', 'facts');
     const fact = (k, v, sub) => { const dd = el('dd', null, v); if (sub) { dd.append(' ', el('small', null, sub)); } facts.append(el('dt', null, k), dd); };
     fact('Target', r.target_price == null ? 'not set yet' : eur(r.target_price));
     fact('Lowest', eur(r.lowest_price), [r.lowest_period, r.lowest_source && '(' + r.lowest_source + ')'].filter(Boolean).join(' '));
-    card.append(top, price, facts, el('p', 'note', r.reason));
+    card.append(top, price, ...(yp ? [yp] : []), facts, el('p', 'note', r.reason));
 
     const rows = latestRows(r.sku);
     const priced = rows.filter(x => x.total_delivered != null).sort((a, b) => a.total_delivered - b.total_delivered || a.shop.localeCompare(b.shop));
