@@ -16,7 +16,7 @@ Daily multi-shop price check for exact products in NL, one subagent per product,
 | `data/sources.json` | Skill | Every source: shop, domain, type (`history`/`aggregator`/`shop`), categories, added, found_via, last_ok, fail_streak, needs_browser, status (`active`/`dormant`) |
 | `data/prices.json`, `data/verdicts.json` | Skill | Append-only history (row shapes in `checker.md`) |
 
-Dashboard: https://claude.ai/artifact/QAyrPRKD6srL3YnNn5AWPg
+Dashboard: https://avrghz.github.io/price-watcher/ (GitHub Pages, `index.html` reads `data/*.json` — updates on every push)
 
 ## User requests in chat
 - "Track X" → add line to `watchlist.md`. "Stop X" → remove line. Commit + push. Nothing else needed.
@@ -34,7 +34,7 @@ Dashboard: https://claude.ai/artifact/QAyrPRKD6srL3YnNn5AWPg
    - `new_sources` → append to `sources.json` if domain not present (`found_via` as given, `fail_streak: 0`)
    - per source: ok → `last_ok`=today, `fail_streak: 0`; failed → `fail_streak`+1; `fail_streak` ≥ 7 → `dormant`; dormant source ok again → `active`. Set `needs_browser` as reported.
 6. `git commit -m "Price check <date>"` + `git push`.
-7. **Dashboard:** upload `data/prices.json` and `data/verdicts.json` (`Artifact` publish, `url` = dashboard, `asset: true`), then `ArtifactData update` `datasets/prices` and `datasets/verdicts`: `source.url` = new `/_blob/…`, `updated: {at, by: "price routine"}`, `edit: {via: "claude", at}`. Tools unavailable → say so in summary; the repo is still the record.
+7. **Dashboard:** nothing to do — GitHub Pages serves `index.html`, which reads the pushed `data/*.json`.
 8. Any verdict changed to BUY → `PushNotification` if available. Summary: per product verdict, cheapest shop + total, new sources found, sources gone dormant.
 
 ## Safety boundaries (non-negotiable, also for subagents)

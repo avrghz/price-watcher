@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Witgoed Price Watch</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
+<style>
+:root { --bg:#faf9f5; --panel:#fff; --fg:#1f1e1c; --muted:#6b6862; --line:#e4e1d8; --ok:#2f7d4f; --warn:#b26a00; --grid:#ecebe5;
+  --c1:#c2410c; --c2:#2563eb; --c3:#7c3aed; --c4:#059669; --c5:#db2777; --c6:#ca8a04; }
+@media (prefers-color-scheme: dark) { :root { --bg:#1a1917; --panel:#242320; --fg:#ece9e1; --muted:#a29e95; --line:#3a3833; --ok:#5fc48a; --warn:#f0a43a; --grid:#302e2a;
+  --c1:#fb923c; --c2:#60a5fa; --c3:#a78bfa; --c4:#34d399; --c5:#f472b6; --c6:#facc15; } }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+.pw { display: grid; gap: 24px; max-width: 60rem; margin: 0 auto; padding: 24px 16px 48px; }
+h1 { font-family: Georgia, serif; font-weight: 400; font-size: 2rem; margin: 0; }
+.lede { margin: 4px 0 0; color: var(--muted); max-width: 65ch; }
+.cards { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(min(100%, 22rem), 1fr)); align-items: start; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 20px; display: grid; gap: 10px; min-width: 0; }
+.card h2 { margin: 0; font-size: 1.15rem; font-weight: 600; }
+.note { margin: 0; color: var(--muted); font-size: .85rem; }
+.row { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.big { font-family: Georgia, serif; font-size: 2rem; font-variant-numeric: tabular-nums; }
+.pill { padding: 2px 10px; border-radius: 999px; font-size: .8rem; font-weight: 600; letter-spacing: .04em; border: 1px solid currentColor; }
+.pill.buy { color: var(--ok); } .pill.wait { color: var(--warn); } .pill.neutral { color: var(--muted); }
+.alert { color: var(--ok); font-weight: 600; }
+.facts { display: grid; grid-template-columns: auto 1fr; gap: 4px 16px; margin: 0; }
+.facts dt { color: var(--muted); } .facts dd { margin: 0; font-variant-numeric: tabular-nums; }
+.facts small { color: var(--muted); font-size: .8rem; }
+.drill { border-top: 1px solid var(--line); }
+.toggle { all: unset; box-sizing: border-box; width: 100%; cursor: pointer; display: flex; justify-content: space-between; align-items: center; min-height: 48px; font-weight: 600; }
+.toggle::after { content: "▾"; color: var(--muted); transition: transform .2s; }
+.drill.open .toggle::after { transform: rotate(180deg); }
+.toggle:focus-visible, a:focus-visible { outline: 2px solid currentColor; outline-offset: 2px; border-radius: 8px; }
+.shops { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.shop { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 2px 10px; min-height: 56px; padding: 8px 12px; border: 1px solid var(--line); border-radius: 8px; text-decoration: none; color: inherit; background: var(--bg); }
+.shop.best { border-color: var(--ok); }
+.shop .nm { font-weight: 600; overflow-wrap: anywhere; } .shop .nm::after { content: " ↗"; color: var(--muted); font-weight: 400; }
+.shop .pr { font-family: Georgia, serif; font-size: 1.2rem; font-variant-numeric: tabular-nums; }
+.shop .meta { grid-column: 1 / -1; color: var(--muted); font-size: .8rem; }
+.tag { color: var(--ok); font-size: .8rem; margin-left: 6px; }
+.sub { margin: 14px 0 6px; font-size: .75rem; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.nop { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.nop a { display: inline-flex; align-items: center; min-height: 40px; padding: 0 12px; border: 1px dashed var(--line); border-radius: 999px; color: var(--muted); text-decoration: none; font-size: .8rem; }
+.nop b { color: var(--fg); margin-right: 4px; font-weight: 600; }
+.chart { position: relative; min-height: 240px; }
+.tip { position: absolute; pointer-events: none; background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 4px 10px; font-size: .8rem; white-space: nowrap; box-shadow: 0 4px 12px #0002; }
+.legend { display: flex; gap: 14px; flex-wrap: wrap; font-size: .8rem; color: var(--muted); }
+.sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; }
+</style>
+</head>
+<body>
+<div class="pw">
+  <header>
+    <h1>Witgoed Price Watch</h1>
+    <p class="lede">Checked every morning across Dutch shops. Delivered totals incl. BTW, new only. Last check: <b id="last">—</b>.</p>
+  </header>
+  <section class="cards" id="cards"><p class="note">Loading…</p></section>
+  <section class="card">
+    <h2>Cheapest delivered price per day</h2>
+    <p class="note">Lowest shop-confirmed price across all shops checked that day.</p>
+    <div class="legend" id="legend"></div>
+    <div class="chart" id="chart"></div>
+  </section>
+</div>
+<script>
+const COLORS = ['--c1','--c2','--c3','--c4','--c5','--c6'].map(v => `var(${v})`);
+const eur = n => n == null ? '' : '€' + d3.format(',')(Number(n));
+const fmtDay = s => d3.utcFormat('%-d %b %Y')(new Date(s));
+const el = (t, c, x) => { const e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; };
+const STATUS = {'unreachable':'blocked','not found':'not listed','partial':'no delivery cost','aggregator':'comparison'};
+const OPEN = new Set();
+let PRICES = [], VERDICTS = [];
+
+const load = f => fetch(`data/${f}.json?t=${Date.now()}`, {cache: 'no-store'}).then(r => r.json());
+
+function latestVerdicts() {
+  const by = new Map();
+  for (const v of VERDICTS) { const p = by.get(v.sku); if (!p || v.date > p.date) by.set(v.sku, v); }
+  return [...by.values()];
+}
+function dailyLow() {
+  const m = new Map();
+  for (const p of PRICES) {
+    if (p.source !== 'fetched' || p.total_delivered == null) continue;
+    const k = p.sku + '|' + p.date, t = Number(p.total_delivered);
+    if (!m.has(k) || t < m.get(k).low) m.set(k, {sku: p.sku, date: p.date, low: t});
+  }
+  return [...m.values()].sort((a, b) => a.date < b.date ? -1 : 1);
+}
+function latestRows(sku) {
+  const mine = PRICES.filter(p => p.sku === sku && p.shop !== '(all sources)');
+  const last = mine.reduce((a, p) => p.date > a ? p.date : a, '');
+  return mine.filter(p => p.date === last);
+}
+
+function shopLink(r, best) {
+  const a = el('a', 'shop' + (best ? ' best' : '')); a.href = r.url || '#'; a.target = '_blank'; a.rel = 'noopener';
+  const nm = el('span', 'nm', r.shop); if (best) nm.append(el('span', 'tag', 'Cheapest'));
+  a.append(nm, el('span', 'pr', eur(r.total_delivered)));
+  const bits = [r.stock, r.source === 'aggregator' ? 'price seen on comparison site only' : '', r.note].filter(Boolean);
+  if (bits.length) a.append(el('span', 'meta', bits.join(' · ')));
+  return a;
+}
+
+function drawCards() {
+  const root = document.getElementById('cards'); root.replaceChildren();
+  const vs = latestVerdicts();
+  document.getElementById('last').textContent = vs.length ? fmtDay(vs.reduce((a, r) => r.date > a ? r.date : a, '')) : '—';
+  for (const r of vs) {
+    const card = el('article', 'card');
+    card.append(el('h2', null, r.product || r.sku));
+    const top = el('div', 'row');
+    top.append(el('span', 'pill ' + String(r.verdict).toLowerCase(), r.verdict), el('span', 'note', 'confidence ' + r.confidence));
+    if (r.alert) top.append(el('span', 'alert', 'Good time to buy'));
+    const price = el('div', 'row'); price.append(el('span', 'big', eur(r.cheapest_total)), el('span', null, 'at ' + (r.cheapest_shop || '')));
+    const facts = el('dl', 'facts');
+    const fact = (k, v, sub) => { const dd = el('dd', null, v); if (sub) { dd.append(' ', el('small', null, sub)); } facts.append(el('dt', null, k), dd); };
+    fact('Target', r.target_price == null ? 'not set yet' : eur(r.target_price));
+    fact('Lowest', eur(r.lowest_price), [r.lowest_period, r.lowest_source && '(' + r.lowest_source + ')'].filter(Boolean).join(' '));
+    card.append(top, price, facts, el('p', 'note', r.reason));
+
+    const rows = latestRows(r.sku);
+    const priced = rows.filter(x => x.total_delivered != null).sort((a, b) => a.total_delivered - b.total_delivered || a.shop.localeCompare(b.shop));
+    const rest = rows.filter(x => x.total_delivered == null).sort((a, b) => a.shop.localeCompare(b.shop));
+    const best = priced.find(x => x.source === 'fetched');
+    const wrap = el('div', 'drill');
+    const btn = el('button', 'toggle', `Compare ${priced.length} priced shop${priced.length === 1 ? '' : 's'}` + (rest.length ? ` · ${rest.length} without price` : ''));
+    btn.type = 'button';
+    const panel = el('div');
+    const setOpen = o => { btn.setAttribute('aria-expanded', o); panel.hidden = !o; wrap.classList.toggle('open', o); };
+    setOpen(OPEN.has(r.sku));
+    btn.onclick = () => { const o = !OPEN.has(r.sku); o ? OPEN.add(r.sku) : OPEN.delete(r.sku); setOpen(o); };
+    const ul = el('ul', 'shops');
+    for (const s of priced) { const li = el('li'); li.append(shopLink(s, s === best)); ul.append(li); }
+    panel.append(ul);
+    if (rest.length) {
+      panel.append(el('p', 'sub', 'No price today'));
+      const nop = el('ul', 'nop');
+      for (const s of rest) { const li = el('li'), a = el('a'); a.href = s.url || '#'; a.target = '_blank'; a.rel = 'noopener'; a.title = s.note || ''; a.append(el('b', null, s.shop), STATUS[s.status] || s.status); li.append(a); nop.append(li); }
+      panel.append(nop);
+    }
+    wrap.append(btn, panel); card.append(wrap); root.append(card);
+  }
+}
+
+function drawChart() {
+  const e = document.getElementById('chart'), lg = document.getElementById('legend');
+  e.replaceChildren(); lg.replaceChildren();
+  const rows = dailyLow().map(r => ({...r, t: new Date(r.date)}));
+  if (!rows.length) return;
+  const skus = [...new Set(rows.map(r => r.sku))];
+  skus.forEach((s, i) => { const sp = el('span'), sw = el('i', 'sw'); sw.style.background = COLORS[i % COLORS.length]; sp.append(sw, s); lg.append(sp); });
+  const W = Math.max(280, e.clientWidth), H = 240, m = {t: 12, r: 64, b: 28, l: 56};
+  const ext = d3.extent(rows, r => r.t);
+  if (+ext[0] === +ext[1]) { ext[0] = d3.utcDay.offset(ext[0], -3); ext[1] = d3.utcDay.offset(ext[1], 3); }
+  const x = d3.scaleUtc(ext, [m.l, W - m.r]);
+  const y = d3.scaleLinear([d3.min(rows, r => r.low) * 0.9, d3.max(rows, r => r.low) * 1.05], [H - m.b, m.t]).nice();
+  const svg = d3.select(e).append('svg').attr('width', '100%').attr('viewBox', `0 0 ${W} ${H}`);
+  svg.append('g').attr('transform', `translate(${m.l},0)`).call(d3.axisLeft(y).ticks(5).tickSize(-(W - m.l - m.r)).tickFormat(v => '€' + d3.format(',')(v)))
+    .call(g => { g.select('.domain').remove(); g.selectAll('line').attr('stroke', 'var(--grid)'); g.selectAll('text').attr('fill', 'var(--muted)'); });
+  svg.append('g').attr('transform', `translate(0,${H - m.b})`).call(d3.axisBottom(x).ticks(Math.min(6, Math.max(2, Math.floor(W / 110)))).tickFormat(d3.utcFormat('%-d %b')))
+    .call(g => { g.select('.domain').attr('stroke', 'var(--line)'); g.selectAll('line').remove(); g.selectAll('text').attr('fill', 'var(--muted)'); });
+  const tip = d3.select(e).append('div').attr('class', 'tip').style('opacity', 0);
+  skus.forEach((sku, i) => {
+    const s = rows.filter(r => r.sku === sku), c = COLORS[i % COLORS.length];
+    svg.append('path').datum(s).attr('fill', 'none').attr('stroke', c).attr('stroke-width', 2).attr('d', d3.line(r => x(r.t), r => y(r.low)));
+    svg.append('g').selectAll('circle').data(s).join('circle').attr('cx', r => x(r.t)).attr('cy', r => y(r.low)).attr('r', 5).attr('fill', c)
+      .on('pointerenter', (ev, r) => {
+        tip.text(`${fmtDay(r.date)} · ${sku} ${eur(r.low)}`);
+        tip.style('left', Math.max(0, Math.min(x(r.t) / W * e.clientWidth, e.clientWidth - 180)) + 'px').style('top', Math.max(0, y(r.low) / H * e.clientHeight - 40) + 'px').style('opacity', 1);
+      }).on('pointerleave', () => tip.style('opacity', 0));
+    const last = s[s.length - 1];
+    svg.append('text').attr('x', x(last.t) + 8).attr('y', y(last.low) + 4).attr('fill', 'var(--fg)').attr('font-size', 12).text(eur(last.low));
+  });
+}
+
+Promise.all([load('prices'), load('verdicts')]).then(([p, v]) => { PRICES = p; VERDICTS = v; drawCards(); drawChart(); })
+  .catch(err => { document.getElementById('cards').textContent = 'Could not load data: ' + err; });
+let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(drawChart, 150); });
+</script>
+</body>
+</html>
