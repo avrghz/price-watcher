@@ -70,8 +70,16 @@
         {
           "name": "Trade-in old appliance",
           "pct": 5
+        },
+        {
+          "name": "Extra 3%",
+          "pct": 3
         }
-      ]
+      ],
+      "confirmed": "2026-11-10: user's LG checkout = €1,239.15 = €1,399 × 0.85 + €50 service (installation + old-appliance removal)",
+      "optional_services": {
+        "installation_and_removal": 50
+      }
     }
   },
   {
